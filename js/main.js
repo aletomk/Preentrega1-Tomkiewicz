@@ -28,3 +28,24 @@ function plazoFijo() {
     }
     alert("No hay problema, gracias por su visita😉");
 }
+
+function plazoFijoCompuesto() {
+
+}
+
+function acciones() {
+
+}
+
+function accionesArgentinas() {
+
+}
+
+function indices() {
+
+}
+
+function criptomonedas() {
+
+}
+
