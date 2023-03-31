@@ -1,6 +1,8 @@
 let continuar = true;
 const TASA_MENSUAL = 6;
 
+//FUNCIÓN INICIAR CONSULTA DE PLAZO FIJO
+
 function iniciarConsulta() {
     let capital = parseInt(prompt("💲Ingrese el capital a invertir\n¡¡Por favor sin letras, puntos ni espacios y mayor a $999!!").trim());
     if (!isNaN(capital) && (capital >= 1000)){
@@ -28,6 +30,8 @@ function plazoFijo() {
     }
     alert("No hay problema, gracias por su visita😉");
 }
+
+//FUNCIÓN INICIAR CONSULTA DE PLAZO FIJO CON INTERES COMPUESTO
 
 function iniciarConsultaCompuesto() {
     let capital = parseInt(prompt("💲Ingrese el capital a invertir\n¡¡Por favor sin letras, puntos ni espacios y mayor a $999!!").trim());
@@ -60,4 +64,21 @@ function plazoFijoCompuesto() {
     alert("No hay problema, gracias por su visita😉");
 }
 
+//FUNCIONES QUE MUESTRAN LOS ARRAYS EN FORMA DE TABLA
+
+function accionesF() {
+    console.table(acciones);
+}
+
+function accionesArgentinasF() {
+    console.table(accionesArgentinas);
+}
+
+function indicesF() {
+    console.table(indices);
+}
+
+function criptomonedasF() {
+    console.table(criptomonedas);
+}
 
