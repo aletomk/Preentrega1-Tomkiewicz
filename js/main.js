@@ -4,8 +4,8 @@ function iniciarConsulta() {
     const TASA_MENSUAL = 6;
     let capital = parseInt(prompt("💲Ingrese el capital a invertir\n¡¡Por favor sin letras, puntos ni espacios y mayor a $999!!").trim());
     if (!isNaN(capital) && (capital >= 1000)){
-        let meses = prompt("📅Ingrese la cantidad de meses que usted desea (hasta 12)").trim();
-            if (meses == 1 || meses == 2 || meses == 3 || meses == 4 || meses == 5 || meses == 6 || meses == 7 || meses == 8 || meses == 9 || meses == 10 || meses == 11 || meses == 12) {
+        let meses = prompt("📅Ingrese la cantidad de meses que usted desea (hasta 60)").trim();
+            if (meses >= 1 && meses <=60) {
                 let interes = (capital * (TASA_MENSUAL * meses))/100;
                 let dineroTotal = capital + interes;
                 if (meses == 1) {
@@ -33,19 +33,4 @@ function plazoFijoCompuesto() {
 
 }
 
-function acciones() {
-
-}
-
-function accionesArgentinas() {
-
-}
-
-function indices() {
-
-}
-
-function criptomonedas() {
-
-}
 
