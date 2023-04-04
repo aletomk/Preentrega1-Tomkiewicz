@@ -70,7 +70,7 @@ function accionesF() {
     console.table(acciones);
 }
 
-function accionesArgentinasF() {
+function accionesArgF() {
     console.table(accionesArgentinas);
 }
 

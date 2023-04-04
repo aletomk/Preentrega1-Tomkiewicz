@@ -1,3 +1,8 @@
+/*PSEUDOCLASES*/
+::selection{
+    background: $bg-hover;
+}
+
 /* ETIQUETAS GENÉRICAS */
 
 *{
@@ -52,65 +57,11 @@ p{
     font-family: "Manrope", sans-serif;
     font-size: 18px;
     padding: 2px 30px 2px 30px;
-    background-color: #f0f0f0a8;
+    background-color: $bg-p;
     text-align: center;
 }
 
-/* GRILLA PRINCIPAL */
-
-#grilla_index{
-    display: grid;
-    grid-template-areas: "header header" "main main" "footer footer";
-    grid-template-columns: repeat(2, 1fr);
-    margin: 0 auto;
-    background-image: url(../images/stocks.png);
-}
-
-/*HEADER */
-
-#header_index{
-    grid-area: header;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    background-color: #87B9E7;
-    border-bottom: 4px solid #2187E4;
-}
-
-/* MAIN */
-
-#main_index{
-    grid-area: main;
-}
-
-.seccion{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 0 5px 0 5px;
-}
-
-.apartado{
-    padding: 5px 10px 5px 10px;
-    display: grid;
-    justify-items: center;
-}
-
-.apartado_parrafo{
-    width: 510px;
-    margin: 0 auto;
-}
-
-/* FOOTER */
-
-#footer_index{
-    grid-area: footer;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    background-color: #87B9E7;
-    border-top: 4px solid #2187E4;
-    margin-top: 20px;
-}
+/*FOOTER*/
 
 .consola-img img{
     width: 550px;

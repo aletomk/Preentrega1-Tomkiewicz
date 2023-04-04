@@ -1,0 +1,19 @@
+{
+  "name": "pre-entregas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aletomk/Preentrega1-Tomkiewicz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aletomk/Preentrega1-Tomkiewicz/issues"
+  },
+  "homepage": "https://github.com/aletomk/Preentrega1-Tomkiewicz#readme"
+}
