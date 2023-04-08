@@ -11,9 +11,9 @@ function iniciarConsulta() {
                 let interes = (capital * (TASA_MENSUAL * meses))/100;
                 let dineroTotal = capital + interes;
                 if (meses == 1) {
-                alert(`✅Ud. tendrá \$${parseInt(dineroTotal)} en un plazo de ${meses} mes`);
+                alert(`✅Ud. tendrá \$${Math.round(dineroTotal)} en un plazo de ${meses} mes`);
                 } else{
-                    alert(`✅Ud. tendrá \$${parseInt(dineroTotal)} en un plazo de ${meses} meses`);
+                    alert(`✅Ud. tendrá \$${Math.round(dineroTotal)} en un plazo de ${meses} meses`);
                 }
             } else{
                 alert("⛔Los datos ingresados no son validos, por favor vuelve a intentarlo");
@@ -44,9 +44,9 @@ function iniciarConsultaCompuesto() {
                 }
                 let dineroTotal = parseInt(capital);
                 if (meses == 1) {
-                alert(`✅Ud. tendrá \$${dineroTotal} en un plazo de ${meses} mes`);
+                alert(`✅Ud. tendrá \$${Math.round(dineroTotal)} en un plazo de ${meses} mes`);
                 } else{
-                    alert(`✅Ud. tendrá \$${dineroTotal} en un plazo de ${meses} meses`);
+                    alert(`✅Ud. tendrá \$${Math.round(dineroTotal)} en un plazo de ${meses} meses`);
                 }
             } else{
                 alert("⛔Los datos ingresados no son validos, por favor vuelve a intentarlo");
@@ -82,3 +82,21 @@ function criptomonedasF() {
     console.table(criptomonedas);
 }
 
+//MÉTODO FIND 
+function buscarCriptmoneda() {
+    let cripto = prompt("Ingresa el nombre de la criptomoneda a buscar:").toUpperCase();
+    let resultado = criptomonedas.find((criptomoneda) => criptomoneda.nombre == cripto);
+        if (resultado !== undefined) {
+            console.table(resultado);
+        } else{
+            console.warn("😢No se encontró la criptomoneda indicada", cripto);
+        }
+}
+
+//MÉTODO MAP
+function nombreIndicices() {
+    let arraySimplificado = indices.map((indice) => {
+        return {nombre: indice.nombre};
+    })
+    console.table(arraySimplificado);
+}

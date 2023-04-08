@@ -22,11 +22,11 @@ const indices = [{nombre: "Dow Jones", continente: "América", pais: "Estados Un
                  {nombre: "Nikkei 225", continente: "Asia", pais: "Japón", empresas: "225"}];
 
 // Criptomonedas
-const criptomonedas = [{nombre: "Bitcoin", creacion: "2008", creador: "Satoshi Nakamoto", capitalizacion: "$548,335,700,778"},
-                       {nombre: "Ethereum", creacion: "2015", creador: "Vitalik Buterin", capitalizacion: "$219,782,099,493"},
+const criptomonedas = [{nombre: "BITCOIN", creacion: "2008", creador: "Satoshi Nakamoto", capitalizacion: "$548,335,700,778"},
+                       {nombre: "ETHEREUM", creacion: "2015", creador: "Vitalik Buterin", capitalizacion: "$219,782,099,493"},
                        {nombre: "BNB", creacion: "2017", creador: "Changpeng Zhao", capitalizacion: "$50,066,652,175"},
                        {nombre: "XRP", creacion: "2004", creador: "Ryan Fugger", capitalizacion: "$27,628,055,729"},
-                       {nombre: "Cardano", creacion: "2015", creador: "Charles Hoskinson y Jeremy Wood", capitalizacion: "$14,015,873,398"}];
+                       {nombre: "CARDANO", creacion: "2015", creador: "Charles Hoskinson y Jeremy Wood", capitalizacion: "$14,015,873,398"}];
 
 // Todo en un mismo array
 const todo = [acciones, accionesArgentinas, indices, criptomonedas];
