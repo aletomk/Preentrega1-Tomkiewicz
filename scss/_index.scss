@@ -1,11 +1,28 @@
+th{
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+}
+
+td{
+    font-family: 'Poppins', sans-serif;
+}
+
 th, td {
     padding: 8px;
-    text-align: left;
+    text-align: center;
     border-bottom: 1px solid #ddd;
 }
-  
-tr:hover td {
-    background-color: white;
+
+tr:hover{
+    background-color: rgb(241, 241, 241);
+}
+
+tr:hover th{
+    background-color: rgb(198, 198, 198);
+}
+
+.tabla{
+    background-color: $bg-p;
 }
 
 .apartado{

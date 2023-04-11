@@ -25,10 +25,22 @@
     grid-area: main;
 }
 
-.seccion, .tablas{
+.seccion{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 0 5px 0 5px;
+}
+
+.tablas_seccion{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabla{
+    margin: 20px;
+    width: 700px;
+    height: 300px;
 }
 
 /* FOOTER */

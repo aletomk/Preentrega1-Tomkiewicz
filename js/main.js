@@ -100,3 +100,72 @@ function nombreIndicices() {
     })
     console.table(arraySimplificado);
 }
+
+//IMPLEMENTANDO DOM AL PROYECTO
+//funcion tabla acciones
+function tablaAccionesHTML() { 
+    let contenidoTablaHTML = "";
+    const tabla = document.querySelector("tbody.acciones");
+        tabla.innerHTML = "";
+        for (accion of acciones) {
+            contenidoTablaHTML += `<tr>
+                                       <td>${accion.empresa}</td>
+                                       <td>${accion.sector}</td>
+                                       <td>${accion.pais}</td>
+                                       <td>${accion.varAnual}</td>
+                                   <tr>`;
+        }
+        tabla.innerHTML = contenidoTablaHTML || "";
+}
+tablaAccionesHTML();
+
+//funcion tabla acciones argentinas
+function tablaAccionesArgHTML() { 
+    let contenidoTablaHTML = "";
+    const tabla = document.querySelector("tbody.accionesArgentinas");
+        tabla.innerHTML = "";
+        for (accion of accionesArgentinas) {
+            contenidoTablaHTML += `<tr>
+                                       <td>${accion.empresa}</td>
+                                       <td>${accion.sector}</td>
+                                       <td>${accion.ambito}</td>
+                                       <td>${accion.varAnual}</td>
+                                   <tr>`;
+        }
+        tabla.innerHTML = contenidoTablaHTML || "";
+}
+tablaAccionesArgHTML();
+
+//funcion tabla indices
+function tablaIndicesHTML() { 
+    let contenidoTablaHTML = "";
+    const tabla = document.querySelector("tbody.indices");
+        tabla.innerHTML = "";
+        for (indice of indices) {
+            contenidoTablaHTML += `<tr>
+                                       <td>${indice.nombre}</td>
+                                       <td>${indice.continente}</td>
+                                       <td>${indice.pais}</td>
+                                       <td>${indice.empresas}</td>
+                                   <tr>`;
+        }
+        tabla.innerHTML = contenidoTablaHTML || "";
+}
+tablaIndicesHTML();
+
+//funcion tabla criptomonedas
+function tablaCriptomonedasHTML() { 
+    let contenidoTablaHTML = "";
+    const tabla = document.querySelector("tbody.criptomonedas");
+        tabla.innerHTML = "";
+        for (criptomoneda of criptomonedas) {
+            contenidoTablaHTML += `<tr>
+                                       <td>${criptomoneda.nombre}</td>
+                                       <td>${criptomoneda.creacion}</td>
+                                       <td>${criptomoneda.creador}</td>
+                                       <td>${criptomoneda.capitalizacion}</td>
+                                   <tr>`;
+        }
+        tabla.innerHTML = contenidoTablaHTML || "";
+}
+tablaCriptomonedasHTML();

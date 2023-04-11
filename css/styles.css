@@ -62,13 +62,13 @@ p {
 }
 
 /*FOOTER*/
-.consola-img img {
+.consola_img img {
   width: 510px;
   height: 300px;
   border: 2px solid #2187E4;
 }
 
-.datos-alumno {
+.datos_alumno {
   font-family: "Rajdhani", sans-serif;
   display: grid;
   justify-items: center;
@@ -104,6 +104,18 @@ p {
   padding: 0 5px 0 5px;
 }
 
+.tablas_seccion {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.tabla {
+  margin: 20px;
+  width: 700px;
+  height: 300px;
+}
+
 /* FOOTER */
 #footer_index {
   grid-area: footer;
@@ -113,6 +125,33 @@ p {
   background-color: #87B9E7;
   border-top: 4px solid #2187E4;
   margin-top: 20px;
+}
+
+th {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+}
+
+td {
+  font-family: "Poppins", sans-serif;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+  background-color: rgb(241, 241, 241);
+}
+
+tr:hover th {
+  background-color: rgb(198, 198, 198);
+}
+
+.tabla {
+  background-color: rgba(240, 240, 240, 0.6588235294);
 }
 
 .apartado {
