@@ -1,3 +1,13 @@
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+  
+tr:hover td {
+    background-color: white;
+}
+
 .apartado{
     padding: 5px 10px 5px 10px;
     display: grid;
