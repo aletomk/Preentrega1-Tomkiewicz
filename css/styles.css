@@ -1,4 +1,4 @@
-/*VARIABLES PARA COLORES*/ /*PSEUDOCLASES*/
+/*PSEUDOCLASES*/
 ::selection {
   background: #28A4FA;
 }
@@ -24,18 +24,19 @@ h1 {
 
 h2 {
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: 30px;
+  font-size: 35px;
+  font-weight: bold;
   margin: 25px 0 10px 0;
   text-align: center;
+  text-transform: uppercase;
 }
 
 h3 {
-  font-size: 25px;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 22px;
   margin-top: 5px;
-  margin-bottom: 0;
-  padding-top: 5px;
-  text-decoration: underline;
-  text-transform: uppercase;
+  padding: 5px 0 8px 0;
+  font-weight: bold;
 }
 
 ul {
@@ -54,76 +55,63 @@ li {
 
 p {
   font-family: "Manrope", sans-serif;
-  font-size: 18px;
-  padding: 2px 30px 2px 30px;
-  background-color: rgba(240, 240, 240, 0.6588235294);
+}
+
+input{
+  width: 40%;
+  height: 50px;
+}
+
+caption {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 27px;
+  font-weight: bold;
+  margin: 25px 0 10px 0;
+  letter-spacing: 2px;
   text-align: center;
 }
 
-/*FOOTER*/
-.consola_img img {
-  width: 510px;
-  height: 300px;
-  border: 2px solid #2187E4;
+/*MAIN*/
+
+.simulador_seccion {
+  background-color: white;
+  border: 1px solid whitesmoke;
+  margin: 60px 20px 20px 20px;
+  padding: 30px;
+  border-radius: 10px;  
 }
 
-.datos_alumno {
-  font-family: "Rajdhani", sans-serif;
+.simulador_h2{
+  border-bottom: 1.5px groove #2186e4;
+}
+
+.simulador_h3{
+  background-color: #28a2fa2c;
+}
+
+.simulador_div {
+  margin: 13px;
+  padding: 8px;
+}
+
+.apartado {
+  padding: 5px 10px 5px 10px;
   display: grid;
   justify-items: center;
 }
 
-/* GRILLA PRINCIPAL */
-#grilla_index {
-  display: grid;
-  grid-template-areas: "header header" "main main" "footer footer";
-  grid-template-columns: repeat(2, 1fr);
+.apartado_parrafo {
+  width: 510px;
   margin: 0 auto;
-  background-image: url(../images/stocks.png);
-}
-
-/*HEADER */
-#header_index {
-  grid-area: header;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  background-color: #87B9E7;
-  border-bottom: 4px solid #2187E4;
-}
-
-/* MAIN */
-#main_index {
-  grid-area: main;
-}
-
-.seccion {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  padding: 0 5px 0 5px;
-}
-
-.tablas_seccion {
-  display: grid;
-  justify-content: center;
-  align-items: center;
 }
 
 .tabla {
   margin: 20px;
-  width: 700px;
+  width: 100%;
   height: 300px;
-}
-
-/* FOOTER */
-#footer_index {
-  grid-area: footer;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  background-color: #87B9E7;
-  border-top: 4px solid #2187E4;
-  margin-top: 20px;
+  background-color: rgba(240, 240, 240, 0.6588235294);
+  border-collapse: collapse;
+  border: 2px solid #28A4FA;
 }
 
 th {
@@ -149,17 +137,56 @@ tr:hover th {
   background-color: rgb(198, 198, 198);
 }
 
-.tabla {
-  background-color: rgba(240, 240, 240, 0.6588235294);
+.consola_img img {
+  width: 510px;
+  height: 300px;
+  border: 2px solid #2187E4;
 }
 
-.apartado {
-  padding: 5px 10px 5px 10px;
+/*FOOTER*/
+.datos_alumno {
+  font-family: "Rajdhani", sans-serif;
   display: grid;
   justify-items: center;
 }
 
-.apartado_parrafo {
-  width: 510px;
+/* GRILLA PRINCIPAL */
+#grilla_index {
+  display: grid;
+  grid-template-areas: "header header" "main main" "footer footer";
+  grid-template-columns: repeat(2, 1fr);
   margin: 0 auto;
+  background-image: url(../images/stocks.png);
+}
+
+/*HEADER GRILLA*/
+#header_index {
+  grid-area: header;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: #87B9E7;
+  border-bottom: 4px solid #2187E4;
+}
+
+/* MAIN GRILLA*/
+#main_index {
+  grid-area: main;
+}
+
+.tablas_seccion {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+/* FOOTER GRILLA*/
+#footer_index {
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: #87B9E7;
+  border-top: 4px solid #2187E4;
+  margin-top: 20px;
 }

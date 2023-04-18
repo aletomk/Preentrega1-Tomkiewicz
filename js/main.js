@@ -1,4 +1,4 @@
-let continuar = true;
+/*let continuar = true;
 const TASA_MENSUAL = 6;
 
 //FUNCIÓN INICIAR CONSULTA DE PLAZO FIJO
@@ -62,7 +62,7 @@ function plazoFijoCompuesto() {
         continuar = confirm("¿Deseas volver a probar con otro capital?");
     }
     alert("No hay problema, gracias por su visita😉");
-}
+}*/
 
 //FUNCIONES QUE MUESTRAN LOS ARRAYS EN FORMA DE TABLA
 

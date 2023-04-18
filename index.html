@@ -5,9 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El ciclon financiero | Inicio</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/variables.js"></script>
-    <script defer src="js/main.js"></script>
+    <!-- FAMILIAS TIPOGRÁFICAS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital@1&display=swap" rel="stylesheet">
@@ -16,6 +14,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+    <!-- CSS BOOTSTRAP5-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- CÓDIGO CSS -->
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <!-- CÓDIGO JAVASCRIPT -->
+    <script src="js/variables.js"></script>
+    <script defer src="js/main.js"></script>
+    <script defer src="js/plazosFijos.js"></script>
 </head>
 
 <body id="grilla_index">
@@ -24,27 +31,48 @@
     </header>
 
     <main id="main_index">
-        <section class="seccion">
-            <div class="apartado">
-                <h2>Simulador de plazo fijo simple🔁</h2>
-                <div class="apartado_parrafo">
-                    <p>Ejecute en la consola la funcion <b>plazoFijo( )</b>   ⬇</p>
-                </div>
-                <div class="consola_img">
-                    <img src="images/consola-js.png" alt="Consola JavaScript">
-                </div>
-            </div>
+        <section class="simulador_seccion">
+            <div class="simulador">
+                <div class="simulador_h2"><h2>Simula tu plazo fijo🔁</h2></div>
+                    <div class="simulador_div">
+                    <h3 class="simulador_h3">Tipo de plazo fijo</h3>
+                        <div class="form-check">
+                        <input class="form-check-input" type="radio" name="tipoPlazo" id="flexRadioDefault1" checked>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          Plazo fijo simple
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="tipoPlazo" id="flexRadioDefault2">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                          Plazo fijo compuesto
+                        </label>
+                      </div>
+                    </div>
 
-            <div class="apartado">
-                <h2>Simulador de plazo fijo compuesto🔄</h2>
-                <div class="apartado_parrafo">
-                    <p>Ejecute en la consola la funcion <b>plazoFijoCompuesto( )</b>  ⬇</p>
-                </div>
-                <div class="consola_img">
-                    <img src="images/consola-js.png" alt="Consola JavaScript">
-                </div>
-            </div>
+                    <div class="simulador_div">
+                    <h3 class="simulador_h3">¿Cuánto querés invertir?</h3>
+                        <label for="capital"></label>
+                        <input type="number" id="capital" min="1000" max="40000000" placeholder="Monto en $">
+                        <span><p>(Mínimo de $1.000)</p></span>
+                    </div>
 
+                    <div class="simulador_div">
+                    <h3 class="simulador_h3">¿A cuántos meses?</h3>
+                        <label for="meses"></label>
+                        <input type="number" id="meses" min="1" max="60" placeholder="Meses deseados">
+                    </div>    
+                    
+                    <div class="simulador_div">
+                    <button type="button" class="btn btn-outline-primary">Simular</button>
+                    </div>
+
+                    <div class="simulador_div">
+                        <p>Al final del plazo fijo, recibis: $ <span id="resultadoSimulador">0.00</span></p>
+                    </div>
+            </div>
+        </section>
+        <section class="metodos_seccion">
             <div class="apartado">
                 <h2>Métodos de busqueda y transformación (método find)🔎</h2>
                 <div class="apartado_parrafo">
@@ -69,14 +97,15 @@
         <section class="tablas_seccion">
 
             <div class="apartado">
-            <h2>Las acciones💹 más importantes del mundo🌐</h2> 
-                <table class="tabla">
+            
+                <table class="tabla" summary="Las acciones bursátiles más importantes del mundo">
+                    <caption>Las acciones💹 más importantes del mundo🌐</caption>
                     <thead>
                         <tr>
-                            <th>EMPRESA</th>
-                            <th>SECTOR</th>
-                            <th>PAÍS</th>
-                            <th>VAR. ANUAL</th>
+                            <th scope="col">EMPRESA</th>
+                            <th scope="col">SECTOR</th>
+                            <th scope="col">PAÍS</th>
+                            <th scope="col">VAR. ANUAL</th>
                         </tr>
                     </thead>
                     <tbody class="acciones">
@@ -91,19 +120,19 @@
             </div>
 
             <div class="apartado">
-            <h2>Las acciones💹 más importantes de Argentina🚩</h2>
-                <table class="tabla">
+                <table class="tabla" summary="Las acciones bursátiles Argentinas más importantes del país">
+                    <caption>Las acciones💹 más importantes de Argentina🚩</caption>
                     <thead>
                         <tr>
-                            <th>EMPRESA</th>
-                            <th>SECTOR</th>
-                            <th>ÁMBITO</th>
-                            <th>VAR. ANUAL</th>
+                            <th scope="col">EMPRESA</th>
+                            <th scope="col">SECTOR</th>
+                            <th scope="col">ÁMBITO</th>
+                            <th scope="col">VAR. ANUAL</th>
                         </tr>
                     </thead>
                     <tbody class="accionesArgentinas">
                         <tr>
-                            <td>nombre</td>
+                            <td scope="row">nombre</td>
                             <td>sector</td>
                             <td>ambito</td>
                             <td>%</td>
@@ -113,11 +142,11 @@
             </div>
 
             <div class="apartado">
-            <h2>Los índices💱 más importantes del mercado 🗺</h2>
-                <table class="tabla">
+                <table class="tabla" summary="Las índices bursátiles más importantes del mundo">
+                    <caption>Los índices💱 más importantes del mercado 🗺</caption>
                     <thead>
                         <tr>
-                            <th>NOMBRE</th>
+                            <th scope="col">NOMBRE</th>
                             <th>CONTINENTE</th>
                             <th>PAÍS</th>
                             <th>N° EMPRESAS</th>
@@ -135,11 +164,11 @@
             </div>
 
             <div class="apartado">
-            <h2>Las criptomonedas💰 más importantes del mundo🌐</h2>
-                <table class="tabla">
+                <table class="tabla" summary="Las criptomonedas más relevantes del mundo">
+                    <caption>Las criptomonedas más importantes del mundo💰</caption>
                     <thead>
                         <tr>
-                            <th>NOMBRE</th>
+                            <th scope="col">NOMBRE</th>
                             <th>CREACIÓN</th>
                             <th>CREADOR</th>
                             <th>CAPITALIZACIÓN</th>
@@ -170,6 +199,9 @@
                 </ul>
         </div>    
     </footer>
+
+    <!-- JS BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
 </html>
