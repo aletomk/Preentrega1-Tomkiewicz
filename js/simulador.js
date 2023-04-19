@@ -1,7 +1,24 @@
 // ARCHIVO JS DEDICADO A PURIFICAR LAS FUNCIONES DE PLAZO FIJO Y PASARLAS A HTML MEDIANTE DOM
 
-let continuar = true;
-const TASA_MENSUAL = 6;
+const selectTipoPlazoFijo = document.querySelector("select#tipoPlazoFijo");
+const inputCapital = document.querySelector("input#capital");
+const inputMeses = document.querySelector("input#meses");
+const btnSimular = document.querySelector("button.btn.btn-outline-primary");
+const resultadoSimulador = document.querySelector("span#resultadoSimulador");
+
+//FUNCIÓN QUE SIMULA EL PLAZO FIJO
+
+function simulador() {
+    if (selectTipoPlazoFijo.value === "Interes simple"){
+        const simulacionSimple = new Simulador(selectTipoPlazoFijo.value, inputCapital.value, inputMeses.value);
+        resultadoSimulador.textContent = simulacionSimple.simularSimple();
+    } else{
+        const simulacionCompuesto = new Simulador(selectTipoPlazoFijo.value, inputCapital.value, inputMeses.value);
+        resultadoSimulador.textContent = simulacionCompuesto.simularCompuesto();
+    }
+}
+
+btnSimular.addEventListener("click", simulador);
 
 //FUNCIÓN INICIAR CONSULTA DE PLAZO FIJO
 

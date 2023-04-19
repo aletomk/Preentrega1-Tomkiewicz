@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap" rel="stylesheet">
@@ -20,9 +21,10 @@
     <!-- CÓDIGO CSS -->
     <link rel="stylesheet" href="css/styles.css" type="text/css">
     <!-- CÓDIGO JAVASCRIPT -->
+    <script src="js/class.simulador.js"></script>
     <script src="js/variables.js"></script>
     <script defer src="js/main.js"></script>
-    <script defer src="js/plazosFijos.js"></script>
+    <script defer src="js/simulador.js"></script>
 </head>
 
 <body id="grilla_index">
@@ -32,45 +34,57 @@
 
     <main id="main_index">
         <section class="simulador_seccion">
-            <div class="simulador">
-                <div class="simulador_h2"><h2>Simula tu plazo fijo🔁</h2></div>
-                    <div class="simulador_div">
-                    <h3 class="simulador_h3">Tipo de plazo fijo</h3>
-                        <div class="form-check">
-                        <input class="form-check-input" type="radio" name="tipoPlazo" id="flexRadioDefault1" checked>
-                        <label class="form-check-label" for="flexRadioDefault1">
-                          Plazo fijo simple
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="tipoPlazo" id="flexRadioDefault2">
-                        <label class="form-check-label" for="flexRadioDefault2">
-                          Plazo fijo compuesto
-                        </label>
-                      </div>
-                    </div>
+            <h2 class="simulador_h2">Simula tu plazo fijo🔁</h2>
+                <div class="simulador_grid">
+                    <form class="simulador">
+                        <div class="simulador_div">
+                            <h3 class="simulador_h3">Tipo de plazo fijo</h3>
+                                <select id="tipoPlazoFijo">
+                                    <option value="Interes simple">Interes simple</option>
+                                    <option value="Interes compuesto">Interes compuesto</option>
+                                </select>
+                        </div>
 
-                    <div class="simulador_div">
-                    <h3 class="simulador_h3">¿Cuánto querés invertir?</h3>
-                        <label for="capital"></label>
-                        <input type="number" id="capital" min="1000" max="40000000" placeholder="Monto en $">
-                        <span><p>(Mínimo de $1.000)</p></span>
-                    </div>
+                        <div class="simulador_div">
+                            <h3 class="simulador_h3">¿Cuánto querés invertir?</h3>
+                                <label for="capital"></label>
+                                <input type="number" id="capital" min="1000" max="40000000" placeholder="Monto en $">
+                                <span><p>(Mínimo de $1.000)</p></span>
+                        </div>
 
-                    <div class="simulador_div">
-                    <h3 class="simulador_h3">¿A cuántos meses?</h3>
-                        <label for="meses"></label>
-                        <input type="number" id="meses" min="1" max="60" placeholder="Meses deseados">
-                    </div>    
-                    
-                    <div class="simulador_div">
-                    <button type="button" class="btn btn-outline-primary">Simular</button>
-                    </div>
+                        <div class="simulador_div">
+                            <h3 class="simulador_h3">¿A cuántos meses?</h3>
+                                <label for="meses"></label>
+                                <input type="number" id="meses" min="1" max="60" placeholder="Mínimo 1 - Máximo 60">
+                        </div>    
+                        
+                        <div class="simulador_div">
+                            <button type="button" class="btn btn-outline-primary">Simular</button>
+                        </div>
 
-                    <div class="simulador_div">
-                        <p>Al final del plazo fijo, recibis: $ <span id="resultadoSimulador">0.00</span></p>
+                        <div class="simulador_div">
+                            <p>Al final del plazo fijo, recibis: $ <span id="resultadoSimulador">0.00</span></p>
+                        </div>
+                    </form>
+                    <div class="resultados">
+                        <div class="resultados_div">
+                            <div><h4>Monto inicial</h4></div>
+                            <div><span>$1.000</span></div>
+                        </div>
+                        <div class="resultados_div">
+                            <div><h4>Intereses</h4></div>
+                            <div><span>$100</span></div>
+                        </div>
+                        <div class="resultados_div">
+                            <div><h4>Plazo en meses</h4></div>
+                            <div><span>10</span></div>
+                        </div>
+                        <div class="resultados_div">
+                            <div><h4>Tasa nominal actual</h4></div>
+                            <div><span>78%</span></div>
+                        </div>
                     </div>
-            </div>
+                </div>
         </section>
         <section class="metodos_seccion">
             <div class="apartado">

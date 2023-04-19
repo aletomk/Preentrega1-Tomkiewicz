@@ -30,3 +30,6 @@ const criptomonedas = [{nombre: "BITCOIN", creacion: "2008", creador: "Satoshi N
 
 // Todo en un mismo array
 const todo = [acciones, accionesArgentinas, indices, criptomonedas];
+
+let continuar = true;
+const TASA_MENSUAL = 6.25;
