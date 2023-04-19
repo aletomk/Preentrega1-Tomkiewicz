@@ -1,5 +1,3 @@
-// ARCHIVO JS DEDICADO A PURIFICAR LAS FUNCIONES DE PLAZO FIJO Y PASARLAS A HTML MEDIANTE DOM
-
 const selectTipoPlazoFijo = document.querySelector("select#tipoPlazoFijo");
 const inputCapital = document.querySelector("input#capital");
 const inputMeses = document.querySelector("input#meses");
@@ -45,8 +43,3 @@ btnGuardar.addEventListener("click", () => {
     };
     localStorage.setItem("Ultima Simulación", JSON.stringify(historialSimulacion));
 });
-
-
-
-
-
