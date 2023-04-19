@@ -32,8 +32,8 @@ h2 {
 }
 
 h3 {
-  font-family: 'Titillium Web', sans-serif;
-  font-size: 22px;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 25px;
   margin-top: 5px;
   padding: 5px 0 8px 0;
   font-weight: bold;
@@ -41,7 +41,7 @@ h3 {
 }
 
 h4{
-  font-family: 'Kanit', sans-serif;
+  font-family: "Kanit", sans-serif;
   font-size: 19px;
   text-transform: capitalize;
   margin-bottom: 0;
@@ -65,18 +65,29 @@ p {
   font-family: "Manrope", sans-serif;
 }
 
-form
-
-input{
-  width: 40%;
+input, select {
+  width: 100%;
   height: 50px;
+  border: 1.3px solid lightgrey;
+  border-radius: 5px;
+  padding: 10px;
 }
 
-select{
-  width: 40%;
-  height: 50px;
-  margin-left: 4px;
+input:hover, select:hover {
+  border: 1.3px solid #28A4FA;
 }
+
+input:focus, select:focus {
+	outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] { -moz-appearance:textfield; }
 
 caption {
   font-family: "IBM Plex Sans", sans-serif;
@@ -87,18 +98,33 @@ caption {
   text-align: center;
 }
 
+button{
+  font-family: "Titillium Web", sans-serif;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  width: 25%;
+  margin-top: 12px;
+  padding: 5px;
+}
+
 /*MAIN*/
+
+#tipoPlazoFijo {
+  margin-top: 25px;
+}
 
 .simulador_seccion {
   background-color: white;
   border: 1px solid whitesmoke;
+  box-shadow: -1px 1px 60px -10px rgba(0,0,0,0.72);
   margin: 60px 20px 20px 20px;
   padding: 30px;
   border-radius: 10px;  
 }
 
 .simulador_h2{
-  border-bottom: 1.5px groove #2186e4;
+  border-bottom: 1.5px solid #147fe3;
+  padding-bottom: 10px;
 }
 
 .simulador_h3{
@@ -110,10 +136,27 @@ caption {
   padding: 8px;
 }
 
+.resultados{
+  width: 75%;
+  margin-left: 40px;
+}
+
 .resultados_div{
-  border: 1px solid red;
+  border: 2.5px solid #28A4FA;
+  border-radius: 10px;
   margin: 30px;
-  padding: 10px;
+  padding: 9px;
+  text-align: center;
+}
+
+.resultados_div > div > span{
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+}
+
+.minimo {
+  font-family: "Quicksand", sans-serif;
+  font-size: 14px;
 }
 
 .apartado {
@@ -198,8 +241,8 @@ tr:hover th {
 
 .simulador_grid {
   display: grid;
-  grid-template-columns: 1.8fr 1.2fr;
-  align-items: center;
+  grid-template-columns: 2fr 1fr;
+  align-items: end;
 }
 
 .tablas_seccion {

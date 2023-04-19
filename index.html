@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
     <!-- CSS BOOTSTRAP5-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- CÓDIGO CSS -->
@@ -49,7 +50,7 @@
                             <h3 class="simulador_h3">¿Cuánto querés invertir?</h3>
                                 <label for="capital"></label>
                                 <input type="number" id="capital" min="1000" max="40000000" placeholder="Monto en $">
-                                <span><p>(Mínimo de $1.000)</p></span>
+                                <span><p class="minimo">(Mínimo de $1.000)</p></span>
                         </div>
 
                         <div class="simulador_div">
@@ -59,7 +60,7 @@
                         </div>    
                         
                         <div class="simulador_div">
-                            <button type="button" class="btn btn-outline-primary">Simular</button>
+                            <button type="button" class="btn btn-outline-primary"><b>Simular</b></button>
                         </div>
 
                         <div class="simulador_div">
@@ -67,6 +68,9 @@
                         </div>
                     </form>
                     <div class="resultados">
+                        <div>
+                            <img src="images/plazofijo.svg" alt="imagen plazo fijo">
+                        </div>
                         <div class="resultados_div">
                             <div><h4>Monto inicial</h4></div>
                             <div><span>$1.000</span></div>
