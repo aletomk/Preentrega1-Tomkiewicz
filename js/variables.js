@@ -33,3 +33,4 @@ const todo = [acciones, accionesArgentinas, indices, criptomonedas];
 
 let continuar = true;
 const TASA_MENSUAL = 6.25;
+let interes = 0;

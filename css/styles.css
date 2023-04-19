@@ -40,7 +40,7 @@ h3 {
   text-align: center;
 }
 
-h4{
+h4 {
   font-family: "Kanit", sans-serif;
   font-size: 19px;
   text-transform: capitalize;
@@ -96,19 +96,23 @@ caption {
   text-align: center;
 }
 
-button{
+button {
   font-family: "Titillium Web", sans-serif;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  width: 25%;
   margin-top: 12px;
   padding: 5px;
+  width: 170px;
 }
 
 /*MAIN*/
 
 #tipoPlazoFijo {
   margin-top: 25px;
+}
+
+#resultadoSimulador{
+  color: #28A4FA;
 }
 
 .simulador_seccion {
@@ -120,26 +124,32 @@ button{
   border-radius: 10px;  
 }
 
-.simulador_h2{
+.simulador_h2 {
   border-bottom: 1.5px solid #147fe3;
   padding-bottom: 10px;
 }
 
-.simulador_h3{
+.simulador_h3 {
   background-color: #28a2fa2c;
 }
 
 .simulador_div {
-  margin: 13px;
+  margin: 10px;
   padding: 8px;
 }
 
-.resultados{
+.resultado_simulacion p{
+  font-family: 'Sofia Sans Condensed', sans-serif;
+  text-align: center;
+  font-size: 25px;
+}
+
+.resultados {
   width: 75%;
   margin-left: 40px;
 }
 
-.resultados_div{
+.resultados_div {
   border: 2.5px solid #28A4FA;
   border-radius: 10px;
   margin: 30px;
@@ -147,7 +157,7 @@ button{
   text-align: center;
 }
 
-.resultados_div > div > span{
+.resultados_div > div > span {
   font-family: "Quicksand", sans-serif;
   font-size: 18px;
 }
@@ -155,6 +165,22 @@ button{
 .minimo {
   font-family: "Quicksand", sans-serif;
   font-size: 14px;
+}
+
+.tiposDeInteres {
+  display: flex;
+  flex-direction: column;
+  font-family: "Quicksand", sans-serif;
+}
+
+.tiposDeInteres li {
+  list-style: circle;
+  font-size: 15px;
+}
+
+.simulador_botones {
+  display: flex;
+  justify-content: space-between;
 }
 
 .apartado {
