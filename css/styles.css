@@ -77,6 +77,10 @@ input:hover, select:hover {
   border: 1.3px solid #28A4FA;
 }
 
+input#criptomoneda:hover {
+  border: 1.3px solid #fada28;
+}
+
 input:focus, select:focus {
 	outline: none;
 }
@@ -119,10 +123,10 @@ button {
 }
 
 .simulador_seccion {
-  background-color: white;
+  background-color: rgb(243, 242, 242);
   border: 1px solid whitesmoke;
   box-shadow: -1px 1px 60px -10px rgba(0,0,0,0.72);
-  margin: 60px 20px 20px 20px;
+  margin: 60px 20px 80px 20px;
   padding: 30px;
   border-radius: 10px;  
 }
@@ -197,11 +201,18 @@ button {
   margin: 0 auto;
 }
 
+.tablas_h2{
+  margin: 25px 0 0 0;
+  border-bottom: 1.5px solid #147fe3;
+  padding-bottom: 10px;
+}
+
 .tabla {
-  margin: 20px;
+  margin: 0 20px 20px 20px;
   width: 100%;
   height: 300px;
   background-color: rgba(240, 240, 240, 0.6588235294);
+  background-image: url("../images/stocks.png");
   border-collapse: collapse;
   caption-side: top;
   border: 2px solid #28A4FA;
@@ -227,14 +238,29 @@ tr:hover {
 }
 
 tr:hover th {
-  background-color: rgb(198, 198, 198);
+  background-color: #28a2faa2;
 }
 
-.consola_img img {
-  width: 510px;
-  height: 300px;
-  border: 2px solid #2187E4;
+/*.metodos_h3 {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 23px;
+  margin-top: 6px;
+  font-weight: bold;
+  text-align: center;
 }
+
+.metodos_tabla {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid whitesmoke;
+  box-shadow: -1px 1px 60px -10px rgba(0,0,0,0.72);
+  margin: 60px 20px 20px 20px;
+  padding: 30px;
+  border-radius: 10px;  
+}*/
 
 /*FOOTER*/
 .datos_alumno {
@@ -277,6 +303,12 @@ tr:hover th {
   display: grid;
   justify-content: center;
   align-items: center;
+  background-color: rgb(243, 242, 242);
+  border: 1px solid whitesmoke;
+  box-shadow: -1px 1px 60px -10px rgba(0,0,0,0.72);
+  margin: 60px 20px 80px 20px;
+  padding: 30px;
+  border-radius: 10px; 
 }
 
 /* FOOTER GRILLA*/

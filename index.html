@@ -22,11 +22,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- CÓDIGO CSS -->
     <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <!-- CÓDIGO JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- LIBRERIA SWEET ALERT -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- CÓDIGO JAVASCRIPT -->
     <script src="js/class.simulador.js"></script>
     <script src="js/variables.js"></script>
-    <script defer src="js/tablas.js"></script>
-    <script defer src="js/simulador.js"></script>
+    <script defer src="js/app.js"></script>
 </head>
 
 <body id="grilla_index">
@@ -54,14 +57,14 @@
                         <div class="simulador_div">
                             <h3 class="simulador_h3">¿Cuánto querés invertir?</h3>
                                 <label for="capital"></label>
-                                <input type="number" id="capital" min="1000" max="40000000" placeholder="Monto en $">
+                                <input type="number" id="capital" min="1000" placeholder="Monto sin signo $" onkeydown="filtro()">
                                 <span><p class="minimo">(Mínimo de $1.000)</p></span>
                         </div>
 
                         <div class="simulador_div">
                             <h3 class="simulador_h3">¿A cuántos meses?</h3>
                                 <label for="meses"></label>
-                                <input type="number" id="meses" min="1" max="60" placeholder="Mínimo 1 - Máximo 60">
+                                <input type="number" id="meses" min="1" max="60" placeholder="Mínimo 1 - Máximo 60" onkeydown="filtro()">
                         </div>    
                         
                         <div class="simulador_botones">
@@ -100,32 +103,10 @@
                     </div>
                 </div>
         </section>
-        <section class="metodos_seccion">
-            <div class="apartado">
-                <h2>Métodos de busqueda y transformación (método find)🔎</h2>
-                <div class="apartado_parrafo">
-                    <p>Ejecute en la consola la funcion <b>buscarCriptomoneda( )</b>   ⬇</p>
-                </div>
-                <div class="consola_img">
-                    <img src="images/consola-js.png" alt="Consola JavaScript">
-                </div>
-            </div>
-
-            <div class="apartado">
-                <h2>Métodos de busqueda y transformación (método map)🌎</h2>
-                <div class="apartado_parrafo">
-                    <p>Ejecute en la consola la funcion <b>nombreIndices( )</b>   ⬇</p>
-                </div>
-                <div class="consola_img">
-                    <img src="images/consola-js.png" alt="Consola JavaScript">
-                </div>
-            </div>
-        </section>
 
         <section class="tablas_seccion">
-
+            <h2 class="tablas_h2">💵Gráficos financieros💵</h2>
             <div class="apartado">
-            
                 <table class="tabla" summary="Las acciones bursátiles más importantes del mundo">
                     <caption>Las acciones💹 más importantes del mundo🌐</caption>
                     <thead>
@@ -189,10 +170,14 @@
                         </tr>
                     </tbody>
                 </table>
+            <!--<div class="metodos_tabla">
+                    <h3 class="metodos_h3">Clicklea el boton para filtar la tabla por nombre</h3>
+                        <button type="button" class="btn btn-outline-warning filtrar"><b>Filtrar</b></button>
+                </div> -->      
             </div>
 
             <div class="apartado">
-                <table class="tabla" summary="Las criptomonedas más relevantes del mundo">
+                <table id="crypto_tabla" class="tabla" summary="Las criptomonedas más relevantes del mundo">
                     <caption>Las criptomonedas más importantes del mundo💰</caption>
                     <thead>
                         <tr>
@@ -211,8 +196,14 @@
                         </tr>
                     </tbody>
                 </table>
+                <!-- 
+                <form id="crypto-form" class="metodos_tabla">
+                    <h3 class="metodos_h3">Ingrese el nombre de alguna de las criptomonedas de la tabla</h3>
+                    <label for="criptomoneda">Buscar criptomoneda:</label>
+                    <input type="text" id="criptomoneda" placeholder="Ejemplo: Bitcoin">
+                    <button type="submit" class="btn btn-outline-warning"><b>Buscar</b></button>
+                </form>-->
             </div>
-            
         </section>
     </main>
 

@@ -1,4 +1,68 @@
-//TABLA ACCIONES
+//CONSTANTES
+const selectTipoPlazoFijo = document.querySelector("select#tipoPlazoFijo");
+const inputCapital = document.querySelector("input#capital");
+const inputMeses = document.querySelector("input#meses");
+const btnSimular = document.querySelector("button.btn.btn-outline-primary");
+const btnGuardar = document.querySelector("button.btn.btn-outline-info");
+const btnFiltrar = document.querySelector("button.btn.btn-outline-warning.filtrar");
+const btnBuscar = document.querySelector("button.btn.btn-outline-warning.buscar");
+const resultadoSimulador = document.querySelector("span#resultadoSimulador");
+
+//FUNCIÓN QUE SIMULA EL PLAZO FIJO
+function simulador() {
+    if (selectTipoPlazoFijo.value === "Interes simple"){
+        if ((inputCapital.value >= 1000) && (inputMeses.value >= 1 && inputMeses.value <= 60)) {
+        const simulacionSimple = new Simulador(selectTipoPlazoFijo.value, inputCapital.value, inputMeses.value);
+        resultadoSimulador.textContent = simulacionSimple.simularSimple();
+        montoInicial.textContent = inputCapital.value;
+        intereses.textContent = interes;
+        plazo.textContent = inputMeses.value;
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Datos incorrectos',
+                text: 'Por favor, ingrese los datos correctamente!',
+            });
+        }
+    } else{
+        if ((inputCapital.value >= 1000) && (inputMeses.value >= 1 && inputMeses.value <= 60)) {
+        const simulacionCompuesto = new Simulador(selectTipoPlazoFijo.value, inputCapital.value, inputMeses.value);
+        resultadoSimulador.textContent = simulacionCompuesto.simularCompuesto();
+        montoInicial.textContent = inputCapital.value;
+        intereses.textContent = parseInt(interes);
+        plazo.textContent = inputMeses.value;
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Datos incorrectos',
+                text: 'Por favor, ingrese los datos correctamente!',
+            });
+        }
+    }
+}
+
+//BOTONES DEL SIMULADOR
+btnSimular.addEventListener("click", simulador);
+
+btnGuardar.addEventListener("click", () => {
+    const historialSimulacion = {
+        Tipo: selectTipoPlazoFijo[selectTipoPlazoFijo.options.selectedIndex].textContent,
+        Capital: inputCapital.value,
+        Plazo: inputMeses.value,
+        Tasa: TASA_MENSUAL,
+        Intereses: interes
+    };
+    localStorage.setItem("Ultima Simulación", JSON.stringify(historialSimulacion));
+    Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Tu simulación ha sido guardada con exito!',
+    showConfirmButton: false,
+    timer: 1500
+    });
+});
+
+//TABLAS
 function tablaAccionesHTML() { 
     let contenidoTablaHTML = "";
     const tabla = document.querySelector("tbody.acciones");
@@ -15,7 +79,6 @@ function tablaAccionesHTML() {
 }
 tablaAccionesHTML();
 
-//TABLA ACCIONES ARGENTINAS
 function tablaAccionesArgHTML() { 
     let contenidoTablaHTML = "";
     const tabla = document.querySelector("tbody.accionesArgentinas");
@@ -32,7 +95,6 @@ function tablaAccionesArgHTML() {
 }
 tablaAccionesArgHTML();
 
-//TABLA INDICES
 function tablaIndicesHTML() { 
     let contenidoTablaHTML = "";
     const tabla = document.querySelector("tbody.indices");
@@ -49,7 +111,6 @@ function tablaIndicesHTML() {
 }
 tablaIndicesHTML();
 
-//TABLA CRIPTOMONEDAS
 function tablaCriptomonedasHTML() { 
     let contenidoTablaHTML = "";
     const tabla = document.querySelector("tbody.criptomonedas");
@@ -65,7 +126,6 @@ function tablaCriptomonedasHTML() {
         tabla.innerHTML = contenidoTablaHTML || "";
 }
 tablaCriptomonedasHTML();
-
 
 //MÉTODO FIND 
 function buscarCriptmoneda() {
@@ -84,4 +144,11 @@ function nombreIndicices() {
         return {nombre: indice.nombre};
     })
     console.table(arraySimplificado);
+}
+
+//FUNCION QUE INHIBE EL PUNTO Y LA COMA EN LOS INPUTS
+function filtro() {
+var tecla = event.key;
+if (['.',',','e'].includes(tecla))
+   event.preventDefault()
 }

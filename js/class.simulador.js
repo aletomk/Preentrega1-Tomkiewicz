@@ -14,6 +14,7 @@ class Simulador {
             interes = (this.capital * TASA_MENSUAL)/100;
             this.capital = this.capital + interes;       
         }
+        interes = this.capital - inputCapital.value;
         return (parseInt(this.capital));
     }
 }
