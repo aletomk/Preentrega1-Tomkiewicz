@@ -32,5 +32,5 @@ const criptomonedas = [{nombre: "BITCOIN", creacion: "2008", creador: "Satoshi N
 const todo = [acciones, accionesArgentinas, indices, criptomonedas];
 
 let continuar = true;
-const TASA_MENSUAL = 6.25;
+const TASA_MENSUAL = 7.5;
 let interes = 0;

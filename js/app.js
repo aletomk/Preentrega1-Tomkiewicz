@@ -2,44 +2,38 @@
 const selectTipoPlazoFijo = document.querySelector("select#tipoPlazoFijo");
 const inputCapital = document.querySelector("input#capital");
 const inputMeses = document.querySelector("input#meses");
+const inputCriptomoneda = document.querySelector("input#criptomoneda");
 const btnSimular = document.querySelector("button.btn.btn-outline-primary");
 const btnGuardar = document.querySelector("button.btn.btn-outline-info");
 const btnFiltrar = document.querySelector("button.btn.btn-outline-warning.filtrar");
-const btnBuscar = document.querySelector("button.btn.btn-outline-warning.buscar");
+const btnBuscar = document.querySelector("button.btn.btn-outline-warning");
 const resultadoSimulador = document.querySelector("span#resultadoSimulador");
 
 //FUNCIÓN QUE SIMULA EL PLAZO FIJO
 function simulador() {
-    if (selectTipoPlazoFijo.value === "Interes simple"){
-        if ((inputCapital.value >= 1000) && (inputMeses.value >= 1 && inputMeses.value <= 60)) {
+    if ((inputCapital.value >= 1000) && (inputMeses.value >= 1 && inputMeses.value <= 60)) {
+    if (selectTipoPlazoFijo.value === "Interes simple") {
         const simulacionSimple = new Simulador(selectTipoPlazoFijo.value, inputCapital.value, inputMeses.value);
         resultadoSimulador.textContent = simulacionSimple.simularSimple();
         montoInicial.textContent = inputCapital.value;
         intereses.textContent = interes;
         plazo.textContent = inputMeses.value;
-        } else {
-            Swal.fire({
-                icon: 'error',
-                title: 'Datos incorrectos',
-                text: 'Por favor, ingrese los datos correctamente!',
-            });
+        } else{
+            const simulacionCompuesto = new Simulador(selectTipoPlazoFijo.value, inputCapital.value, inputMeses.value);
+            resultadoSimulador.textContent = simulacionCompuesto.simularCompuesto();
+            montoInicial.textContent = inputCapital.value;
+            intereses.textContent = parseInt(interes);
+            plazo.textContent = inputMeses.value;
         }
     } else{
-        if ((inputCapital.value >= 1000) && (inputMeses.value >= 1 && inputMeses.value <= 60)) {
-        const simulacionCompuesto = new Simulador(selectTipoPlazoFijo.value, inputCapital.value, inputMeses.value);
-        resultadoSimulador.textContent = simulacionCompuesto.simularCompuesto();
-        montoInicial.textContent = inputCapital.value;
-        intereses.textContent = parseInt(interes);
-        plazo.textContent = inputMeses.value;
-        } else {
             Swal.fire({
                 icon: 'error',
                 title: 'Datos incorrectos',
                 text: 'Por favor, ingrese los datos correctamente!',
             });
-        }
     }
 }
+
 
 //BOTONES DEL SIMULADOR
 btnSimular.addEventListener("click", simulador);
@@ -121,7 +115,7 @@ function tablaCriptomonedasHTML() {
                                        <td>${criptomoneda.creacion}</td>
                                        <td>${criptomoneda.creador}</td>
                                        <td>${criptomoneda.capitalizacion}</td>
-                                   <tr>`;
+                                   </tr>`;
         }
         tabla.innerHTML = contenidoTablaHTML || "";
 }
@@ -129,14 +123,39 @@ tablaCriptomonedasHTML();
 
 //MÉTODO FIND 
 function buscarCriptmoneda() {
-    let cripto = prompt("Ingresa el nombre de la criptomoneda a buscar:").toUpperCase();
-    let resultado = criptomonedas.find((criptomoneda) => criptomoneda.nombre == cripto);
-        if (resultado !== undefined) {
-            console.table(resultado);
-        } else{
-            console.warn("😢No se encontró la criptomoneda indicada", cripto);
-        }
+    let tablaReducidaHTML = "";
+    const tabla = document.querySelector("tbody.criptomonedas");
+    const cripto = criptomonedas.find(criptomoneda => criptomoneda.nombre.includes(inputCriptomoneda.value.toUpperCase()));
+    
 }
+
+function filtrarCriptomoneda() {
+    let nuevaTablaHTML = "";
+    const tablaSimplificada = document.querySelector("table.tabla_simplificada");
+
+    let valor = (inputCriptomoneda.value).toUpperCase();
+    const resultado = criptomoneda.filter((criptomoneda) => criptomoneda.includes(valor));
+    btnBuscar.addEventListener("click", () => {
+        nuevaTablaHTML +=   `<thead>    
+                                <tr>
+                                    <th>NOMBRE</th>
+                                    <th>CREACIÓN</th>
+                                    <th>CREADOR</th>
+                                    <th>CAPITALIZACIÓN</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>${resultado.nombre}</td>
+                                    <td>${resultado.creacion}</td>
+                                    <td>${resultado.creador}</td>
+                                    <td>${resultado.capitalizacion}</td>
+                                </tr>
+                            </tbody>`;
+    });
+    tablaSimplificada.innerHTML = nuevaTablaHTML || "";
+}
+filtrarCriptomoneda();
 
 //MÉTODO MAP
 function nombreIndicices() {
