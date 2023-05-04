@@ -5,9 +5,16 @@ const inputMeses = document.querySelector("input#meses");
 const inputCriptomoneda = document.querySelector("input#criptomoneda");
 const btnSimular = document.querySelector("button.btn.btn-outline-primary");
 const btnGuardar = document.querySelector("button.btn.btn-outline-info");
-const btnFiltrar = document.querySelector("button.btn.btn-outline-warning.filtrar");
-const btnBuscar = document.querySelector("button.btn.btn-outline-warning");
+const btnHistorial = document.querySelector("button.btn.btn-outline-danger");
 const resultadoSimulador = document.querySelector("span#resultadoSimulador");
+const tabla = document.querySelector("tbody.criptomonedas");
+const URL = 'https://jsonplaceholder.typicode.com/todos';
+
+//FETCH
+fetch(URL)
+    .then(response => response.json())
+    .then(data => mostrarHistorial(data))
+    .catch(error => console.log(error))
 
 //FUNCIÓN QUE SIMULA EL PLAZO FIJO
 function simulador() {
@@ -34,10 +41,8 @@ function simulador() {
     }
 }
 
-
 //BOTONES DEL SIMULADOR
 btnSimular.addEventListener("click", simulador);
-
 btnGuardar.addEventListener("click", () => {
     const historialSimulacion = {
         Tipo: selectTipoPlazoFijo[selectTipoPlazoFijo.options.selectedIndex].textContent,
@@ -56,114 +61,42 @@ btnGuardar.addEventListener("click", () => {
     });
 });
 
-//TABLAS
-function tablaAccionesHTML() { 
+//TABLA
+function tablaCriptomonedasHTML(array) { 
     let contenidoTablaHTML = "";
-    const tabla = document.querySelector("tbody.acciones");
         tabla.innerHTML = "";
-        for (accion of acciones) {
-            contenidoTablaHTML += `<tr>
-                                       <td>${accion.empresa}</td>
-                                       <td>${accion.sector}</td>
-                                       <td>${accion.pais}</td>
-                                       <td>${accion.varAnual}</td>
-                                   <tr>`;
-        }
-        tabla.innerHTML = contenidoTablaHTML || "";
-}
-tablaAccionesHTML();
-
-function tablaAccionesArgHTML() { 
-    let contenidoTablaHTML = "";
-    const tabla = document.querySelector("tbody.accionesArgentinas");
-        tabla.innerHTML = "";
-        for (accion of accionesArgentinas) {
-            contenidoTablaHTML += `<tr>
-                                       <td>${accion.empresa}</td>
-                                       <td>${accion.sector}</td>
-                                       <td>${accion.ambito}</td>
-                                       <td>${accion.varAnual}</td>
-                                   <tr>`;
-        }
-        tabla.innerHTML = contenidoTablaHTML || "";
-}
-tablaAccionesArgHTML();
-
-function tablaIndicesHTML() { 
-    let contenidoTablaHTML = "";
-    const tabla = document.querySelector("tbody.indices");
-        tabla.innerHTML = "";
-        for (indice of indices) {
-            contenidoTablaHTML += `<tr>
-                                       <td>${indice.nombre}</td>
-                                       <td>${indice.continente}</td>
-                                       <td>${indice.pais}</td>
-                                       <td>${indice.empresas}</td>
-                                   <tr>`;
-        }
-        tabla.innerHTML = contenidoTablaHTML || "";
-}
-tablaIndicesHTML();
-
-function tablaCriptomonedasHTML() { 
-    let contenidoTablaHTML = "";
-    const tabla = document.querySelector("tbody.criptomonedas");
-        tabla.innerHTML = "";
-        for (criptomoneda of criptomonedas) {
+        array.forEach(criptomoneda => {
             contenidoTablaHTML += `<tr>
                                        <td>${criptomoneda.nombre}</td>
-                                       <td>${criptomoneda.creacion}</td>
-                                       <td>${criptomoneda.creador}</td>
-                                       <td>${criptomoneda.capitalizacion}</td>
-                                   </tr>`;
-        }
+                                       <td>${criptomoneda.abreviatura}</td>
+                                       <td>${criptomoneda.creacion}</td>                                     
+                                       <td>${criptomoneda.circulacion}</td>
+                                   </tr>`
+        });
         tabla.innerHTML = contenidoTablaHTML || "";
 }
-tablaCriptomonedasHTML();
+tablaCriptomonedasHTML(criptomonedas);
 
-//MÉTODO FIND 
-function buscarCriptmoneda() {
-    let tablaReducidaHTML = "";
-    const tabla = document.querySelector("tbody.criptomonedas");
-    const cripto = criptomonedas.find(criptomoneda => criptomoneda.nombre.includes(inputCriptomoneda.value.toUpperCase()));
-    
+//METODOS DE TRANSFORMACIÓN
+function filtrarCriptomoneda(valor) {
+    let resultado = criptomonedas.filter((criptomoneda) => 
+        criptomoneda.nombre.toUpperCase().includes(valor.toUpperCase())
+    );
+    if (resultado.length > 0) {
+        tablaCriptomonedasHTML(resultado);
+    } else{
+        Swal.fire({
+            icon: 'error',
+            title: 'No se encontraron coincidencias',
+            text: 'Por favor, vuelva a intentarlo',
+            timer: 1500
+        });
+    }
 }
 
-function filtrarCriptomoneda() {
-    let nuevaTablaHTML = "";
-    const tablaSimplificada = document.querySelector("table.tabla_simplificada");
-
-    let valor = (inputCriptomoneda.value).toUpperCase();
-    const resultado = criptomoneda.filter((criptomoneda) => criptomoneda.includes(valor));
-    btnBuscar.addEventListener("click", () => {
-        nuevaTablaHTML +=   `<thead>    
-                                <tr>
-                                    <th>NOMBRE</th>
-                                    <th>CREACIÓN</th>
-                                    <th>CREADOR</th>
-                                    <th>CAPITALIZACIÓN</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>${resultado.nombre}</td>
-                                    <td>${resultado.creacion}</td>
-                                    <td>${resultado.creador}</td>
-                                    <td>${resultado.capitalizacion}</td>
-                                </tr>
-                            </tbody>`;
-    });
-    tablaSimplificada.innerHTML = nuevaTablaHTML || "";
-}
-filtrarCriptomoneda();
-
-//MÉTODO MAP
-function nombreIndicices() {
-    let arraySimplificado = indices.map((indice) => {
-        return {nombre: indice.nombre};
-    })
-    console.table(arraySimplificado);
-}
+inputCriptomoneda.addEventListener("search", (e)=> {
+    filtrarCriptomoneda(e.target.value);
+});
 
 //FUNCION QUE INHIBE EL PUNTO Y LA COMA EN LOS INPUTS
 function filtro() {

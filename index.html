@@ -27,8 +27,8 @@
     <!-- LIBRERIA SWEET ALERT -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- CÓDIGO JAVASCRIPT -->
-    <script src="js/class.simulador.js"></script>
-    <script src="js/variables.js"></script>
+    <script defer src="js/class.simulador.js"></script>
+    <script defer src="js/variables.js"></script>
     <script defer src="js/app.js"></script>
 </head>
 
@@ -74,6 +74,9 @@
                             <div class="simulador_div">
                                 <button type="button" class="btn btn-outline-info"><b>Guardar</b></button>
                             </div>
+                            <div class="simulador_div">
+                                <button type="button" class="btn btn-outline-danger"><b>Ver historial</b></button>
+                            </div>
                         </div>
 
                         <div class="simulador_div resultado_simulacion">
@@ -105,104 +108,30 @@
         </section>
 
         <section class="tablas_seccion">
-            <h2 class="tablas_h2">💵Gráficos financieros💵</h2>
-            <div class="apartado">
-                <table class="tabla" summary="Las acciones bursátiles más importantes del mundo">
-                    <caption>Las acciones💹 más importantes del mundo🌐</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">EMPRESA</th>
-                            <th scope="col">SECTOR</th>
-                            <th scope="col">PAÍS</th>
-                            <th scope="col">VAR. ANUAL</th>
-                        </tr>
-                    </thead>
-                    <tbody class="acciones">
-                        <tr>
-                            <td>nombre</td>
-                            <td>sector</td>
-                            <td>pais</td>
-                            <td>%</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="apartado">
-                <table class="tabla" summary="Las acciones bursátiles Argentinas más importantes del país">
-                    <caption>Las acciones💹 más importantes de Argentina🚩</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">EMPRESA</th>
-                            <th scope="col">SECTOR</th>
-                            <th scope="col">ÁMBITO</th>
-                            <th scope="col">VAR. ANUAL</th>
-                        </tr>
-                    </thead>
-                    <tbody class="accionesArgentinas">
-                        <tr>
-                            <td scope="row">nombre</td>
-                            <td>sector</td>
-                            <td>ambito</td>
-                            <td>%</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="apartado">
-                <table class="tabla" summary="Las índices bursátiles más importantes del mundo">
-                    <caption>Los índices💱 más importantes del mercado 🗺</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">NOMBRE</th>
-                            <th>CONTINENTE</th>
-                            <th>PAÍS</th>
-                            <th>N° EMPRESAS</th>
-                        </tr>
-                    </thead>
-                    <tbody class="indices">
-                        <tr>
-                            <td>nombre</td>
-                            <td>continente</td>
-                            <td>pais</td>
-                            <td>n°</td>
-                        </tr>
-                    </tbody>
-                </table>
-            <!--   <div class="metodos_tabla">
-                    <h3 class="metodos_h3">Clicklea el boton para filtar la tabla por nombre</h3>
-                        <button type="button" class="btn btn-outline-warning filtrar"><b>Filtrar</b></button>
-                </div>   -->   
-            </div>
-
-            <div class="apartado">
-                <table id="crypto_tabla" class="tabla" summary="Las criptomonedas más relevantes del mundo">
-                    <caption>Las criptomonedas más importantes del mundo💰</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">NOMBRE</th>
-                            <th>CREACIÓN</th>
-                            <th>CREADOR</th>
-                            <th>CAPITALIZACIÓN</th>
-                        </tr>
-                    </thead>
-                    <tbody class="criptomonedas">
-                        <tr>
-                            <td>nombre</td>
-                            <td>creacion</td>
-                            <td>creador</td>
-                            <td>cap</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <form id="crypto-form" class="metodos_tabla">
-                    <h3 class="metodos_h3">Ingrese el nombre de alguna de las criptomonedas de la tabla</h3>
-                    <label for="criptomoneda">Buscar criptomoneda:</label>
-                    <input type="text" id="criptomoneda" placeholder="Ejemplo: Bitcoin">
-                    <button type="button" class="btn btn-outline-warning"><b>Buscar</b></button>
-                </form>
-            </div>
+            <h2 class="tablas_h2">💵Las criptomonedas más importantes del mundo💵</h2>
+                <h3 class="metodos_h3">Buscar criptomonedas en la tabla</h3>                
+                    <input type="search" id="criptomoneda" placeholder="Ingrese una criptomoneda">
+                    <div class="apartado">
+                        <table class="tabla" summary="Las criptomonedas más relevantes del mundo">
+                            <caption>Top 20 criptomonedas relevantes💰</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">NOMBRE</th>
+                                    <th>ABREVIATURA</th>
+                                    <th>CREACIÓN</th> 
+                                    <th>EN CIRCULACIÓN</th>
+                                </tr>
+                            </thead>
+                            <tbody class="criptomonedas">
+                                <tr>
+                                    <td>nombre</td>
+                                    <td>creacion</td>
+                                    <td>abreviacion</td>
+                                    <td>cant</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
         </section>
     </main>
 

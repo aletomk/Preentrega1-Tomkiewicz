@@ -1,36 +1,25 @@
-// ARRAYS DE OBJETOS //
+// ARRAY DE OBJETOS //
+const criptomonedas = [{nombre: "BITCOIN", creacion: "2008", abreviatura: "BTC", circulacion: "19,363,168 BTC"},
+                       {nombre: "ETHEREUM", creacion: "2015", abreviatura: "ETH", circulacion: "120,381,822 ETH"},
+                       {nombre: "BNB", creacion: "2017", abreviatura: "BNB", circulacion: "155,862,165 BNB"},
+                       {nombre: "XRP", creacion: "2012", abreviatura: "XRP", circulacion: "51,768,283,547 XRP"},
+                       {nombre: "CARDANO", creacion: "2015", abreviatura: "ADA", circulacion: "34,814,134,119 ADA"},
+                       {nombre: "DOGECOIN", creacion: "2018", abreviatura: "DOGE", circulacion: "139,194,476,384 DOGE"},
+                       {nombre: "POLYGON", creacion: "2016", abreviatura: "MATIC", circulacion: "9,249,469,069 MATIC"},
+                       {nombre: "SOLANA", creacion: "2019", abreviatura: "SOL", circulacion: "394,125,655 SOL"},
+                       {nombre: "POLKADOT", creacion: "2015", abreviatura: "DOT", circulacion: "1,180,099,137 DOT"},
+                       {nombre: "LITECOIN", creacion: "2011", abreviatura: "LTC", circulacion: "72,841,014 LTC"},
+                       {nombre: "TRON", creacion: "2012", abreviatura: "TRX", circulacion: "90,583,548,766 TRX"},
+                       {nombre: "SHIBA INU", creacion: "2020", abreviatura: "SHIB", circulacion: "589,542,157,859,369 SHIB"},
+                       {nombre: "AVALANCHE", creacion: "2013", abreviatura: "AVAX", circulacion: "329,240,229 AVAX"},
+                       {nombre: "CHAINLINK", creacion: "2017", abreviatura: "LINK", circulacion: "517,099,970 LINK"},
+                       {nombre: "UNUS SED LEO", creacion: "2021", abreviatura: "LEO", circulacion: "930,481,350 LEO"},
+                       {nombre: "COSMOS", creacion: "2011", abreviatura: "ATOM", circulacion: "286,370,297 ATOM"},
+                       {nombre: "UNISWAP", creacion: "2016", abreviatura: "UNI", circulacion: "577,501,036 UNI"},
+                       {nombre: "MONERO", creacion: "2014", abreviatura: "XMR", circulacion: "18,273,927 XMR"},
+                       {nombre: "ETHEREUM CLASSIC", creacion: "2013", abreviatura: "ETC", circulacion: "140,751,925 ETC"},
+                       {nombre: "TONCOIN", creacion: "2016", abreviatura: "TON", circulacion: "1,221,401,181 TON"}];
 
-// Acciones
-const acciones = [{empresa: "Apple", sector: "Tecnología", pais: "Estados Unidos", varAnual: "26%"},
-                  {empresa: "Aramco", sector: "Energía", pais: "Arabia Saudí", varAnual: "5%"},
-                  {empresa: "Microsoft", sector: "Tecnología", pais: "Estados Unidos", varAnual: "20%"},
-                  {empresa: "Amazon.com", sector: "Tecnología", pais: "Estados Unidos", varAnual: "22%"},
-                  {empresa: "Alphabet", sector: "Tecnología", pais: "Estados Unidos", varAnual: "17%"}];
-
-// Acciones Argentinas
-const accionesArgentinas = [{empresa: "Comercial del Plata", sector: "Inmobiliario", ambito: "Privado", varAnual: "17%"},
-                            {empresa: "G.F Galicia", sector: "Financiero", ambito: "Privado", varAnual: "10%"},
-                            {empresa: "Ternium S.A", sector: "Metalúrgica", ambito: "Público", varAnual: "15%"},
-                            {empresa: "YPF S.A", sector: "Petrolera", ambito: "Privado", varAnual: "17%"},
-                            {empresa: "Aluar", sector: "Industrial", ambito: "Privado", varAnual: "22%"}];
-
-// Indices
-const indices = [{nombre: "Dow Jones", continente: "América", pais: "Estados Unidos", empresas: "30"},
-                 {nombre: "S&P 500", continente: "América", pais: "Estados Unidos", empresas: "506"},
-                 {nombre: "Merval", continente: "América", pais: "Argentina", empresas: "27"},
-                 {nombre: "Ibex 35", continente: "Europa", pais: "España", empresas: "35"},
-                 {nombre: "Nikkei 225", continente: "Asia", pais: "Japón", empresas: "225"}];
-
-// Criptomonedas
-const criptomonedas = [{nombre: "BITCOIN", creacion: "2008", creador: "Satoshi Nakamoto", capitalizacion: "$548,335,700,778"},
-                       {nombre: "ETHEREUM", creacion: "2015", creador: "Vitalik Buterin", capitalizacion: "$219,782,099,493"},
-                       {nombre: "BNB", creacion: "2017", creador: "Changpeng Zhao", capitalizacion: "$50,066,652,175"},
-                       {nombre: "XRP", creacion: "2004", creador: "Ryan Fugger", capitalizacion: "$27,628,055,729"},
-                       {nombre: "CARDANO", creacion: "2015", creador: "Charles Hoskinson y Jeremy Wood", capitalizacion: "$14,015,873,398"}];
-
-// Todo en un mismo array
-const todo = [acciones, accionesArgentinas, indices, criptomonedas];
-
-let continuar = true;
+//VARIABLES Y CONSTANTES DEL SIMULADOR
 const TASA_MENSUAL = 7.5;
 let interes = 0;

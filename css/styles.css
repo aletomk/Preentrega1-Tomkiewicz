@@ -65,6 +65,15 @@ p {
   font-family: "Manrope", sans-serif;
 }
 
+a{
+  text-decoration: none;
+  color: red;
+}
+
+a:hover{
+  color: white;
+}
+
 input, select {
   width: 100%;
   height: 50px;
@@ -77,7 +86,7 @@ input:hover, select:hover {
   border: 1.3px solid #28A4FA;
 }
 
-input#criptomoneda:hover {
+input.criptomoneda:hover {
   border: 1.3px solid #fada28;
 }
 
@@ -95,7 +104,7 @@ caption {
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 27px;
   font-weight: bold;
-  margin: 25px 0 10px 0;
+  margin: 10px 0 10px 0;
   letter-spacing: 2px;
   text-align: center;
   padding-top: 0;
@@ -196,11 +205,6 @@ button {
   justify-items: center;
 }
 
-.apartado_parrafo {
-  width: 510px;
-  margin: 0 auto;
-}
-
 .tablas_h2{
   margin: 25px 0 0 0;
   border-bottom: 1.5px solid #147fe3;
@@ -210,9 +214,7 @@ button {
 .tabla {
   margin: 0 20px 20px 20px;
   width: 100%;
-  height: 300px;
-  background-color: rgba(240, 240, 240, 0.6588235294);
-  background-image: url("../images/stocks.png");
+  background-color: #d2d2d2;
   border-collapse: collapse;
   caption-side: top;
   border: 2px solid #28A4FA;
@@ -234,33 +236,31 @@ th, td {
 }
 
 tr:hover {
-  background-color: rgb(241, 241, 241);
+  background-color: rgba(212, 212, 212, 0.74);
+  background-image: url("../images/stocks.png");
 }
 
 tr:hover th {
   background-color: #28a2faa2;
 }
 
-/*.metodos_h3 {
-  font-family: "Titillium Web", sans-serif;
-  font-size: 23px;
-  margin-top: 6px;
-  font-weight: bold;
-  text-align: center;
+.metodos_h3{
+  margin-top: 30px;
 }
 
 .metodos_tabla {
-  display: flex;
+  display: grid;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background-color: white;
-  border: 1px solid whitesmoke;
-  box-shadow: -1px 1px 60px -10px rgba(0,0,0,0.72);
-  margin: 60px 20px 20px 20px;
-  padding: 30px;
-  border-radius: 10px;  
-}*/
+  padding: 0px 20px 30px 20px;
+  margin: 10px;
+  width: 70%;
+}
+
+input#criptomoneda {
+  height: 40px;
+  width: 70%;
+  margin-bottom: 20px;
+}
 
 /*FOOTER*/
 .datos_alumno {
@@ -303,6 +303,7 @@ tr:hover th {
   display: grid;
   justify-content: center;
   align-items: center;
+  justify-items: center;
   background-color: rgb(243, 242, 242);
   border: 1px solid whitesmoke;
   box-shadow: -1px 1px 60px -10px rgba(0,0,0,0.72);
