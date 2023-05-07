@@ -198,6 +198,28 @@ button {
   justify-content: space-between;
 }
 
+.section_historial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 70px 80px 70px 80px;
+  padding: 40px 20px 20px 20px;
+  background-color: rgb(243, 242, 242);
+  border: 1px solid whitesmoke;
+  box-shadow: -1px 1px 60px -10px rgba(0,0,0,0.72);
+  border-radius: 10px; 
+}
+
+.tabla_historial {
+  width: 800px;
+  margin: 40px;
+  padding: 20px;
+}
+
+.tabla_historial tr{
+  background-color: white;
+}
+
 .apartado {
   padding: 5px 10px 5px 10px;
   display: grid;
@@ -322,40 +344,6 @@ input#criptomoneda {
   margin-top: 20px;
 }
 
-/*PAGE HISTORIAL*/
-
-#body_historial{
-  margin: 0 auto;
-  background-color: white;
-  background-image: url(../images/stocks2.png);
-}
-
-.section_historial {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 70px 80px 70px 80px;
-  padding: 40px 20px 20px 20px;
-  background-color: rgb(243, 242, 242);
-  border: 1px solid whitesmoke;
-  box-shadow: -1px 1px 60px -10px rgba(0,0,0,0.72);
-  border-radius: 10px; 
-}
-
-.section_historial .btn-outline-dark {
-  width: 400px;
-  margin: 20px 0 30px 0;
-}
-
-.tabla_historial {
-  width: 800px;
-  margin: 40px;
-  padding: 20px;
-}
-
-.tabla_historial tr{
-  background-color: white;
-}
 
 
 
