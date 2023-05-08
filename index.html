@@ -1,171 +1,193 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El ciclon financiero | Inicio</title>
-    <!-- FAMILIAS TIPOGRÁFICAS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital@1&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed&display=swap" rel="stylesheet">
-    <!-- CSS BOOTSTRAP5-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <!-- CÓDIGO CSS -->
-    <link rel="stylesheet" href="css/styles.css" type="text/css">
-    <!-- CÓDIGO JQUERY -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- LIBRERIA SWEET ALERT -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- LIBRERIA LUXON -->
-    <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js"></script>
-    <!-- CÓDIGO JAVASCRIPT -->
-    <script defer src="js/class.simulador.js"></script>
-    <script defer src="js/variables.js"></script>
-    <script defer src="js/app.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>El ciclon financiero | Inicio</title>
+        <!-- FAMILIAS TIPOGRÁFICAS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:ital@1&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed&display=swap" rel="stylesheet">
+        <!-- CSS BOOTSTRAP5-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <!-- CÓDIGO CSS -->
+        <link rel="stylesheet" href="css/styles.css" type="text/css">
+        <!-- CÓDIGO JQUERY -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- LIBRERIA SWEET ALERT -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!-- LIBRERIA LUXON -->
+        <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js"></script>
+        <!-- CÓDIGO JAVASCRIPT -->
+        <script defer src="js/class.simulador.js"></script>
+        <script defer src="js/fetch.js"></script>t
+        <script defer src="js/variables.js"></script>
+        <script defer src="js/app.js"></script>
+    </head>
 
-<body id="grilla_index">
-    <header id="header_index">
-        <h1>🟦🟥🟦El ciclon financiero🟦🟥🟦</h1>
-    </header>
+    <body id="grilla_index">
+        <header id="header_index">
+            <h1>🟦🟥🟦El ciclon financiero🟦🟥🟦</h1>
+        </header>
 
-    <main id="main_index">
-        <section class="simulador_seccion">
-            <h2 class="simulador_h2">Simula tu plazo fijo🔁</h2>
-                <div class="simulador_grid">
-                    <form class="simulador">
-                        <div class="simulador_div">
-                            <h3 class="simulador_h3">Tipo de plazo fijo</h3>
-                                <select id="tipoPlazoFijo">
-                                    <option value="Interes simple">Interes simple</option>
-                                    <option value="Interes compuesto">Interes compuesto</option>
-                                </select>
-                                <ul class="tiposDeInteres">
-                                    <li>El <b>interes simple</b> genera intereses sobre el capital inicial.</li>
-                                    <li>El <b>interes compuesto</b> suma al final de cada mes el interes generado al capital inicial.</li>
-                                </ul>
-                        </div>
-
-                        <div class="simulador_div">
-                            <h3 class="simulador_h3">¿Cuánto querés invertir?</h3>
-                                <label for="capital"></label>
-                                <input type="number" id="capital" min="1000" placeholder="Monto sin signo $" onkeydown="filtro()">
-                                <span><p class="minimo">(Mínimo de $1.000)</p></span>
-                        </div>
-
-                        <div class="simulador_div">
-                            <h3 class="simulador_h3">¿A cuántos meses?</h3>
-                                <label for="meses"></label>
-                                <input type="number" id="meses" min="1" max="60" placeholder="Mínimo 1 - Máximo 60" onkeydown="filtro()">
-                        </div>    
-                        
-                        <div class="simulador_botones">
+        <main id="main_index">
+            <section class="simulador_seccion">
+                <h2>Simula tu plazo fijo🔁</h2>
+                    <div class="simulador_grid">
+                        <form class="simulador">
                             <div class="simulador_div">
-                                <button type="button" id="boton-simular" class="btn btn-outline-primary"><b>Simular</b></button>
+                                <h3>Tipo de plazo fijo</h3>
+                                    <select id="tipoPlazoFijo">
+                                        <option value="Interes simple">Interes simple</option>
+                                        <option value="Interes compuesto">Interes compuesto</option>
+                                    </select>
+                                    <ul class="tiposDeInteres">
+                                        <li>El <b>interes simple</b> genera intereses sobre el capital inicial.</li>
+                                        <li>El <b>interes compuesto</b> suma al final de cada mes el interes generado al capital inicial.</li>
+                                    </ul>
                             </div>
-                            <div class="simulador_div">
-                                <button type="button" id="boton-historial" class="btn btn-outline-danger"><b>Ver historial</b></button>
-                            </div>
-                        </div>
 
-                        <div class="simulador_div resultado_simulacion">
-                            <p>Al final del plazo fijo, recibis: $ <span id="resultadoSimulador">0.00</span></p>
-                        </div>
-                    </form>
-                    <div class="resultados">
-                        <div>
-                            <img src="images/plazofijo.svg" alt="imagen plazo fijo">
-                        </div>
-                        <div class="resultados_div">
-                            <div><h4>Monto inicial</h4></div>
-                            <div>$ <span id="montoInicial">0.00</span></div>
-                        </div>
-                        <div class="resultados_div">
-                            <div><h4>Intereses</h4></div>
-                            <div>$ <span id="intereses">0.00</span></div>
-                        </div>
-                        <div class="resultados_div">
-                            <div><h4>Plazo en meses</h4></div>
-                            <div><span id="plazo">0</span></div>
-                        </div>
-                        <div class="resultados_div">
-                            <div><h4>Tasa nominal anual</h4></div>
-                            <div><span>91%</span></div>
+                            <div class="simulador_div">
+                                <h3>¿Cuánto querés invertir?</h3>
+                                    <label for="capital"></label>
+                                    <input type="number" id="capital" min="1000" placeholder="Monto sin signo $" onkeydown="filtro()">
+                                    <span><p class="minimo">(Mínimo de $1.000)</p></span>
+                            </div>
+
+                            <div class="simulador_div">
+                                <h3>¿A cuántos meses?</h3>
+                                    <label for="meses"></label>
+                                    <input type="number" id="meses" min="1" max="60" placeholder="Mínimo 1 - Máximo 60" onkeydown="filtro()">
+                            </div>    
+                            
+                            <div class="simulador_botones">
+                                <div class="simulador_div">
+                                    <button type="button" id="boton-simular" class="btn btn-outline-primary"><b>Simular</b></button>
+                                </div>
+                                <div class="simulador_div">
+                                    <button type="button" id="boton-historial" class="btn btn-outline-danger"><b>Ver historial</b></button>
+                                </div>
+                            </div>
+
+                            <div class="simulador_div resultado_simulacion">
+                                <p>Al final del plazo fijo, recibis: $ <span id="resultadoSimulador">0.00</span></p>
+                            </div>
+                        </form>
+                        <div class="resultados">
+                            <div>
+                                <img src="images/plazofijo.svg" alt="imagen plazo fijo">
+                            </div>
+                            <div class="resultados_div">
+                                <div><h4>Monto inicial</h4></div>
+                                <div>$ <span id="montoInicial">0.00</span></div>
+                            </div>
+                            <div class="resultados_div">
+                                <div><h4>Intereses</h4></div>
+                                <div>$ <span id="intereses">0.00</span></div>
+                            </div>
+                            <div class="resultados_div">
+                                <div><h4>Plazo en meses</h4></div>
+                                <div><span id="plazo">0</span></div>
+                            </div>
+                            <div class="resultados_div">
+                                <div><h4>Tasa nominal anual</h4></div>
+                                <div><span>91%</span></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-        </section>
+            </section>
 
-        <section class="section_historial">
-            <h2>Plazos fijos simulados anteriores 👀</h2>
-            <table class="table table-hover table-bordered border-light tabla_historial">
-                <thead class="table-light">
-                    <tr>
-                        <th scope="col">Monto</th>
-                        <th scope="col">Tipo de interes</th>
-                        <th scope="col">Intereses</th>
-                        <th scope="col">Meses</th>
-                        <th scope="col">Fecha</th>
-                    </tr>
-                </thead>
-                <tbody id="historial">
+            <section class="historial_seccion">
+                <h2>Plazos fijos simulados anteriores 👀</h2>
+                <table class="table table-hover table-bordered border-light tabla_historial">
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Monto</th>
+                            <th scope="col">Tipo de interes</th>
+                            <th scope="col">Intereses</th>
+                            <th scope="col">Meses</th>
+                            <th scope="col">Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historial">
 
-                </tbody>
-            </table>
-        </section>
+                    </tbody>
+                </table>
+            </section>
 
-        <section class="tablas_seccion">
-            <h2 class="tablas_h2">💵Las criptomonedas más importantes del mundo💵</h2>
-                <h3 class="metodos_h3">Buscar criptomonedas en la tabla</h3>                
-                    <input type="search" id="criptomoneda" placeholder="Ingrese una criptomoneda">
-                    <div class="apartado">
-                        <table class="tabla" summary="Las criptomonedas más relevantes del mundo">
-                            <caption>Top 20 criptomonedas relevantes💰</caption>
-                            <thead>
-                                <tr>
-                                    <th scope="col">NOMBRE</th>
-                                    <th>ABREVIATURA</th>
-                                    <th>CREACIÓN</th> 
-                                    <th>EN CIRCULACIÓN</th>
-                                </tr>
-                            </thead>
-                            <tbody class="criptomonedas">
-                                <tr>
-                                    <td>nombre</td>
-                                    <td>creacion</td>
-                                    <td>abreviacion</td>
-                                    <td>cant</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-        </section>
-    </main>
+            <section class="divisas_seccion">
+                <h2>Cotizaciones del peso Argentino 💹</h2>
+                    <h3>Peso Argentino contra las principales divisas del mundo</h3>                
+                        <div class="divisas">
+                            <ul>
+                                <div class="divisas_div">
+                                    <li>Dolar blue</li>
+                                    <li>Euro blue</li>
+                                </div>
+                                <div class="divisas_div">
+                                    <li>Libra</li>
+                                    <li>Yen</li>
+                                </div>
+                                <div class="divisas_div">
+                                    <li>Real</li>
+                                    <li>Pesos Uru</li>
+                                </div>
+                            </ul>
+                        </div>
+            </section>
 
-    <footer id="footer_index">
-        <div class="datos_alumno">
-            <h3>Datos del alumno:</h3>
-                <ul>
-                    <li><b>Nombre:</b> Alejo Tomkiewicz</li>
-                    <li><b>Institución:</b> CoderHouse</li>
-                    <li><b>Curso:</b> Javascript</li>
-                    <li><b>Comisión:</b> 39490</li>
-                </ul>
-        </div>    
-    </footer>
+            <section class="tablas_seccion">
+                <h2>💵Las criptomonedas más importantes del mundo💵</h2>
+                    <h3>Buscar criptomonedas en la tabla</h3>                
+                        <input type="search" id="criptomoneda" placeholder="Ingrese una criptomoneda">
+                        <div class="apartado">
+                            <table class="tabla" summary="Las criptomonedas más relevantes del mundo">
+                                <caption>Top 20 criptomonedas relevantes💰</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">NOMBRE</th>
+                                        <th>ABREVIATURA</th>
+                                        <th>CREACIÓN</th> 
+                                        <th>EN CIRCULACIÓN</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="criptomonedas">
+                                    <tr>
+                                        <td>nombre</td>
+                                        <td>creacion</td>
+                                        <td>abreviacion</td>
+                                        <td>cant</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+            </section>
+        </main>
 
-    <!-- JS BOOTSTRAP -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-</body>
+        <footer id="footer_index">
+            <div class="datos_alumno">
+                <h3>Datos del alumno:</h3>
+                    <ul>
+                        <li><b>Nombre:</b> Alejo Tomkiewicz</li>
+                        <li><b>Institución:</b> CoderHouse</li>
+                        <li><b>Curso:</b> Javascript</li>
+                        <li><b>Comisión:</b> 39490</li>
+                    </ul>
+            </div>    
+        </footer>
+
+        <!-- JS BOOTSTRAP -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </body>
 
 </html>

@@ -139,13 +139,19 @@ button {
   border-radius: 10px;  
 }
 
-.simulador_h2 {
+.simulador_seccion h2 {
   border-bottom: 1.5px solid #147fe3;
   padding-bottom: 10px;
 }
 
-.simulador_h3 {
+.simulador_seccion h3 {
   background-color: #28a2fa2c;
+}
+
+.simulador_grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: end;
 }
 
 .simulador_div {
@@ -198,7 +204,7 @@ button {
   justify-content: space-between;
 }
 
-.section_historial {
+.historial_seccion {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -208,6 +214,11 @@ button {
   border: 1px solid whitesmoke;
   box-shadow: -1px 1px 60px -10px rgba(0,0,0,0.72);
   border-radius: 10px; 
+}
+
+.historial_seccion h2 {
+  border-bottom: 1.5px solid #147fe3;
+  padding-bottom: 10px;
 }
 
 .tabla_historial {
@@ -226,10 +237,58 @@ button {
   justify-items: center;
 }
 
-.tablas_h2{
+.divisas_seccion {
+  display: grid;
+  flex-direction: column;
+  margin: 70px 80px 70px 80px;
+  padding: 40px 20px 20px 20px;
+  background-color: rgb(243, 242, 242);
+  border: 1px solid whitesmoke;
+  box-shadow: -1px 1px 60px -10px rgba(0,0,0,0.72);
+  border-radius: 10px;
+}
+
+.divisas_seccion h2 {
+  border-bottom: 1.5px solid #147fe3;
+  padding-bottom: 10px;
+}
+
+.divisas ul {
+  display: grid;
+  justify-items: start;
+}
+
+.divisas_div {
+  display: flex;
+}
+
+.divisas_div li {
+  padding: 10px;
+  width: 400px;
+  height: 70px;
+}
+
+.tablas_seccion {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  background-color: rgb(243, 242, 242);
+  border: 1px solid whitesmoke;
+  box-shadow: -1px 1px 60px -10px rgba(0,0,0,0.72);
+  margin: 60px 20px 80px 20px;
+  padding: 30px;
+  border-radius: 10px; 
+}
+
+.tablas_seccion h2 {
   margin: 25px 0 0 0;
   border-bottom: 1.5px solid #147fe3;
   padding-bottom: 10px;
+}
+
+.tablas_seccion h3 {
+  margin-top: 30px;
 }
 
 .tabla {
@@ -263,10 +322,6 @@ th, td {
 
 .tabla tr:hover th {
   background-color: #28a2faa2;
-}
-
-.metodos_h3{
-  margin-top: 30px;
 }
 
 .metodos_tabla {
@@ -312,25 +367,6 @@ input#criptomoneda {
 /* MAIN GRILLA*/
 #main_index {
   grid-area: main;
-}
-
-.simulador_grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  align-items: end;
-}
-
-.tablas_seccion {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  justify-items: center;
-  background-color: rgb(243, 242, 242);
-  border: 1px solid whitesmoke;
-  box-shadow: -1px 1px 60px -10px rgba(0,0,0,0.72);
-  margin: 60px 20px 80px 20px;
-  padding: 30px;
-  border-radius: 10px; 
 }
 
 /* FOOTER GRILLA*/

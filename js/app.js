@@ -10,7 +10,7 @@ const tabla = document.querySelector("tbody.criptomonedas");
 const tabla_historial = document.querySelector("tbody#historial");
 const DateTime = luxon.DateTime.now();
 const FECHA_HOY = DateTime.toLocaleString(DateTime.DATE_SHORT);
-const URL = '';
+
 
 //FUNCIÓN QUE SIMULA EL PLAZO FIJO
 function simulador() {
@@ -110,8 +110,8 @@ btnHistorial.addEventListener("click", () => {
     if (inputCapital.value === "" || inputMeses.value === "") {
         Swal.fire({
             icon: "error",
-            title: "Campos vacíos",
-            text: "Por favor, complete todos los campos del formulario",
+            title: "Sin simulación",
+            text: "Usted debe simular al menos una vez para ver su historial",
         });
         return;
     } else if (inputCapital.value < 1000 || (inputMeses.value < 1 || inputMeses.value > 60)) {
@@ -154,7 +154,7 @@ function filtrarCriptomoneda(valor) {
             icon: 'error',
             title: 'No se encontraron coincidencias',
             text: 'Por favor, vuelva a intentarlo',
-            timer: 1500
+            timer: 2000
         });
     }
 }
