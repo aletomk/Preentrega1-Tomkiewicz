@@ -392,6 +392,57 @@ input#criptomoneda {
   margin-top: 20px;
 }
 
+/*MEDIA QUERIES*/
+
+/*1200PX*/
+@media screen and (max-width: 1200px) {
+  .simulador_seccion, .tablas_seccion, .historial_seccion, .divisas_seccion {
+    margin: 60px 30px 60px 30px;
+    width: 80%;
+  }
+  .simulador_grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .resultados {
+    margin: 0;
+    width: 400px;
+  }
+  .resultados img {
+    display: none;
+  }
+}
+
+/*1024PX*/
+@media screen and (max-width: 1024px) {
+  #boton-historial, #boton-simular {
+    width: 300px;
+  }
+  .simulador_seccion, .tablas_seccion, .historial_seccion, .divisas_seccion {
+    margin: 60px 30px 60px 30px;
+  }
+  .simulador_botones {
+    flex-direction: column;
+    align-items: center;
+  }
+  .resultados {
+    width: 300px;
+  }
+  .resultados_div {
+    margin: 20px;
+  }
+  .tabla_historial {
+  width: 600px;
+  margin: 30px;
+  }
+  .divisas_div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
+
 
 
 

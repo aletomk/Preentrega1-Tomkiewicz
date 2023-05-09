@@ -11,7 +11,6 @@ const tabla_historial = document.querySelector("tbody#historial");
 const DateTime = luxon.DateTime.now();
 const FECHA_HOY = DateTime.toLocaleString(DateTime.DATE_SHORT);
 
-
 //FUNCIÓN QUE SIMULA EL PLAZO FIJO
 function simulador() {
     if ((inputCapital.value >= 1000) && (inputMeses.value >= 1 && inputMeses.value <= 60)) {
@@ -83,9 +82,8 @@ function simularYGuardar() {
     simulador();
     guardarSimulacionEnLocalStorage();
 }
+
 //BOTONES DEL SIMULADOR
-
-
 btnSimular.addEventListener("click", () => {
     if (inputCapital.value === "" || inputMeses.value === "") {
         Swal.fire({
@@ -162,8 +160,6 @@ function filtrarCriptomoneda(valor) {
 inputCriptomoneda.addEventListener("search", (e)=> {
     filtrarCriptomoneda(e.target.value);
 });
-
-
 
 //FUNCION QUE INHIBE EL PUNTO Y LA COMA EN LOS INPUTS
 function filtro() {
