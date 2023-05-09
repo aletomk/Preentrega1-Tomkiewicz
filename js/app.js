@@ -68,7 +68,7 @@ function cargarSimulacion() {
     for (const detalle of obtenerHistorialJSON) {  
       contenidoTablaHistorial +=    `<tr>
                                         <td>$${detalle.Capital}</td>
-                                        <td>${detalle.Tipo}</td>
+                                        <td class="historial_tipo">${detalle.Tipo}</td>
                                         <td>$${detalle.Intereses}</td>
                                         <td>${detalle.Plazo}</td>
                                         <td>${detalle.Fecha}</td>
@@ -131,8 +131,8 @@ function tablaCriptomonedasHTML(array) {
         array.forEach(criptomoneda => {
             contenidoTablaHTML += `<tr>
                                        <td>${criptomoneda.nombre}</td>
-                                       <td>${criptomoneda.abreviatura}</td>
-                                       <td>${criptomoneda.creacion}</td>                                     
+                                       <td class="tabla_col">${criptomoneda.abreviatura}</td>
+                                       <td class="tabla_col">${criptomoneda.creacion}</td> 
                                        <td>${criptomoneda.circulacion}</td>
                                    </tr>`
         });

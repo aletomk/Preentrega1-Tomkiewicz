@@ -120,6 +120,10 @@ button {
   width: 170px;
 }
 
+.azul_rojo {
+  display: inline-flex;
+}
+
 /*MAIN*/
 
 #tipoPlazoFijo {
@@ -396,6 +400,10 @@ input#criptomoneda {
 
 /*1200PX*/
 @media screen and (max-width: 1200px) {
+  #main_index {
+    display: grid;
+    justify-items: center;
+  }
   .simulador_seccion, .tablas_seccion, .historial_seccion, .divisas_seccion {
     margin: 60px 30px 60px 30px;
     width: 80%;
@@ -406,11 +414,22 @@ input#criptomoneda {
     justify-items: center;
   }
   .resultados {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     margin: 0;
-    width: 400px;
+    width: 600px;
   }
-  .resultados img {
+  .resultados_div_img {
     display: none;
+  }
+  .divisas_div {
+    flex-direction: column;
+    align-items: center;
+  }
+  .divisas_seccion {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
   }
 }
 
@@ -420,14 +439,17 @@ input#criptomoneda {
     width: 300px;
   }
   .simulador_seccion, .tablas_seccion, .historial_seccion, .divisas_seccion {
-    margin: 60px 30px 60px 30px;
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    margin: 60px 20px 60px 20px;
   }
   .simulador_botones {
     flex-direction: column;
     align-items: center;
   }
   .resultados {
-    width: 300px;
+    width: 500px;
   }
   .resultados_div {
     margin: 20px;
@@ -436,13 +458,57 @@ input#criptomoneda {
   width: 600px;
   margin: 30px;
   }
-  .divisas_div {
-    flex-direction: column;
-    align-items: center;
+  .datos_alumno ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
-
 }
 
+/*900PX*/
+@media screen and (max-width: 900px) {
+  .simulador_seccion, .tablas_seccion, .historial_seccion, .divisas_seccion {
+    margin: 60px 10px 60px 10px;
+  }
+  .resultados {
+    grid-template-columns: 1fr;
+    width: 300px;
+  }
+  .azul_rojo {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+  .tabla_col {
+    display: none;
+  }
+  .apartado {
+    width: 550px;
+  }
+}
+
+/*600PX*/
+@media screen and (max-width: 600px) {
+  .historial_tipo {
+    display: none;
+  }
+  .datos_alumno ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*500PX*/
+@media screen and (max-width: 500px) {
+  .apartado {
+    width: 400px;
+  }
+}
+
+/*380PX*/
+@media screen and (max-width: 380px) {
+  .tablas_seccion {
+    display: none;
+  }
+}
 
 
 
