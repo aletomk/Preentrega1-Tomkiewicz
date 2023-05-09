@@ -256,16 +256,28 @@ button {
 .divisas ul {
   display: grid;
   justify-items: start;
+  margin: 10px 0 20px 0;
 }
 
 .divisas_div {
   display: flex;
+  width: 800px;
+  justify-content: space-evenly;
 }
 
 .divisas_div li {
   padding: 10px;
-  width: 400px;
-  height: 70px;
+  margin: 10px;
+}
+
+.up {
+  color: green;
+  font-weight: bold;
+}
+
+.down {
+  color: red;
+  font-weight: bold;
 }
 
 .tablas_seccion {
