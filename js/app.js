@@ -8,6 +8,7 @@ const btnHistorial = document.querySelector("button#boton-historial");
 const resultadoSimulador = document.querySelector("span#resultadoSimulador");
 const tabla = document.querySelector("tbody.criptomonedas");
 const tabla_historial = document.querySelector("tbody#historial");
+const tabla_responsive = document.querySelector("div.historial_div");
 const DateTime = luxon.DateTime.now();
 const FECHA_HOY = DateTime.toLocaleString(DateTime.DATE_SHORT);
 
@@ -68,13 +69,56 @@ function cargarSimulacion() {
     for (const detalle of obtenerHistorialJSON) {  
       contenidoTablaHistorial +=    `<tr>
                                         <td>$${detalle.Capital}</td>
-                                        <td class="historial_tipo">${detalle.Tipo}</td>
+                                        <td>${detalle.Tipo}</td>
                                         <td>$${detalle.Intereses}</td>
                                         <td>${detalle.Plazo}</td>
                                         <td>${detalle.Fecha}</td>
                                     </tr>`;
     }
     tabla_historial.innerHTML = contenidoTablaHistorial || "";
+}
+
+function cargarSimulacionResponsive() {
+    const historialJSON = JSON.parse(localStorage.getItem("Historial Simulaciones")) || [];
+    const obtenerHistorialJSON = historialJSON.map((detalle) => ({
+        Tipo: detalle.Tipo,
+        Capital: detalle.Capital,
+        Plazo: detalle.Plazo,
+        Fecha: detalle.Fecha,
+        Intereses: detalle.Intereses,
+    }));
+    let contenidoTablaHistorial = "";
+    tabla_responsive.innerHTML = "";
+        for (const detalle of obtenerHistorialJSON) {  
+        contenidoTablaHistorial +=  
+        `<table class="table table-hover tabla_responsive">
+            <tbody id="tbody_responsive">
+                <tr>
+                    <tr>
+                        <th>Monto</th>
+                        <td>$${detalle.Capital}</td>
+                    </tr>
+                    <tr>
+                        <th>Tipo de interes</th>
+                        <td>${detalle.Tipo}</td>
+                    </tr>
+                    <tr>
+                        <th>Intereses</th>
+                        <td>$${detalle.Intereses}</td>
+                    </tr>
+                    <tr>
+                        <th>Meses</th>
+                        <td>${detalle.Plazo}</td>
+                    </tr>
+                    <tr>
+                        <th>Fecha</th>
+                        <td>${detalle.Fecha}</td>
+                    </tr>
+                </tr>
+            </tbody>
+        </table>`;         
+    }
+    tabla_responsive.innerHTML = contenidoTablaHistorial || "";
 }
 
 //FUNCIÓN QUE REUNE LA SIMULACIÓN Y EL GUARDADO DE DATOS EN LOCAL STORAGE
@@ -120,7 +164,7 @@ btnHistorial.addEventListener("click", () => {
         });
     }
     else {
-        cargarSimulacion();
+        cargarSimulacion(), cargarSimulacionResponsive();
     }
 });
 

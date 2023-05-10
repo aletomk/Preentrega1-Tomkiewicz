@@ -231,8 +231,12 @@ button {
   padding: 20px;
 }
 
-.tabla_historial tr{
+.tabla_historial tr {
   background-color: white;
+}
+
+.tabla_responsive {
+  display: none;
 }
 
 .apartado {
@@ -403,7 +407,6 @@ input#criptomoneda {
 @media screen and (max-width: 1200px) {
   .simulador_seccion, .tablas_seccion, .historial_seccion, .divisas_seccion {
     margin: 60px 30px 60px 30px;
-    width: 80%;
   }
   .simulador_grid {
     display: grid;
@@ -486,11 +489,32 @@ input#criptomoneda {
   }
 }
 
-/*600PX*/
-@media screen and (max-width: 600px) {
-  .historial_tipo {
+/*800PX*/
+@media screen and (max-width: 800px) {
+  .tabla_historial {
+    width: 550px;
+    margin: 30px;
+  }
+}
+
+/*700X*/
+@media screen and (max-width: 700px) {
+  .tabla_historial {
     display: none;
   }
+  .tabla_responsive {
+    display: flex;
+    border: 2px solid #28A4FA;
+    justify-content: center;
+    margin: 20px 0 30px 0;
+  }
+  .historial_div {
+    width: 60%;
+  }
+}
+
+/*600PX*/
+@media screen and (max-width: 600px) {
   .datos_alumno ul {
     grid-template-columns: 1fr;
   }
