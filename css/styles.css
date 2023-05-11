@@ -265,6 +265,7 @@ button {
   display: grid;
   justify-items: start;
   margin: 10px 0 20px 0;
+  padding: 0;
 }
 
 .divisas_div {
@@ -508,9 +509,6 @@ input#criptomoneda {
     justify-content: center;
     margin: 20px 0 30px 0;
   }
-  .historial_div {
-    width: 60%;
-  }
 }
 
 /*600PX*/
@@ -518,19 +516,39 @@ input#criptomoneda {
   .datos_alumno ul {
     grid-template-columns: 1fr;
   }
+  .divisas_div {
+    width: 300px;
+  }
 }
 
-/*500PX*/
-@media screen and (max-width: 500px) {
+/*512PX*/
+@media screen and (max-width: 512px) {
   .apartado {
-    width: 400px;
+    width: 300px;
+    justify-content: center;
+  }
+}
+
+/*480PX*/
+@media screen and (max-width: 480px) {
+  #boton-historial, #boton-simular, .resultados {
+    width: 200px;
   }
 }
 
 /*380PX*/
 @media screen and (max-width: 380px) {
+  #main_index {
+    margin: 0;
+  }
   .tablas_seccion {
     display: none;
+  }
+  .divisas_div {
+    width: 200px;
+  }
+  .divisas_div li {
+    text-align: center;
   }
 }
 
