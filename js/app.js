@@ -47,9 +47,7 @@ function guardarSimulacionEnLocalStorage() {
         Intereses: parseInt(interes),
     };
     const historialJSON = JSON.parse(localStorage.getItem("Historial Simulaciones")) || [];
-    if (historialJSON.length >= 10) {
-        historialJSON.splice(0, 1);
-    }
+    historialJSON.length >= 10 && historialJSON.splice(0, 1);
     historialJSON.push(historialSimulacion);
     localStorage.setItem("Historial Simulaciones", JSON.stringify(historialJSON));
 }
@@ -186,16 +184,12 @@ tablaCriptomonedasHTML(criptomonedas);
 function filtrarCriptomoneda(valor) {
     let resultado = criptomonedas.filter((criptomoneda) => 
         criptomoneda.nombre.toUpperCase().includes(valor.toUpperCase()));
-    if (resultado.length > 0) {
-        tablaCriptomonedasHTML(resultado);
-    } else{
-        Swal.fire({
-            icon: 'error',
-            title: 'No se encontraron coincidencias',
-            text: 'Por favor, vuelva a intentarlo',
-            timer: 2000
-        });
-    }
+    resultado.length > 0 ? tablaCriptomonedasHTML(resultado) : Swal.fire({
+        icon: 'error', 
+        title: 'No se encontraron coincidencias', 
+        text: 'Por favor, vuelva a intentarlo', 
+        timer: 2000
+    });
 }
 
 inputCriptomoneda.addEventListener("search", (e)=> {
