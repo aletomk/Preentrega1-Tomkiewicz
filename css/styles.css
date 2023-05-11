@@ -3,7 +3,7 @@
   background: #28A4FA;
 }
 
-/* ETIQUETAS GENÉRICAS */
+/*ETIQUETAS GENÉRICAS*/
 * {
   box-sizing: border-box;
 }
@@ -65,11 +65,11 @@ p {
   font-family: "Manrope", sans-serif;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-a:hover{
+a:hover {
   color: white;
 }
 
@@ -125,7 +125,6 @@ button {
 }
 
 /*MAIN*/
-
 #tipoPlazoFijo {
   margin-top: 25px;
 }
@@ -366,7 +365,7 @@ input#criptomoneda {
   justify-items: center;
 }
 
-/* GRILLA PRINCIPAL */
+/*GRILLA PRINCIPAL*/
 #grilla_index {
   display: grid;
   grid-template-areas: "header header header" "main main main" "footer footer footer";
@@ -385,13 +384,13 @@ input#criptomoneda {
   border-bottom: 4px solid #2187E4;
 }
 
-/* MAIN GRILLA*/
+/*MAIN GRILLA*/
 #main_index {
   grid-area: main;
   margin: 20px 20px 0 20px;
 }
 
-/* FOOTER GRILLA*/
+/*FOOTER GRILLA*/
 #footer_index {
   grid-area: footer;
   display: flex;
@@ -519,10 +518,6 @@ input#criptomoneda {
   .divisas_div {
     width: 300px;
   }
-}
-
-/*512PX*/
-@media screen and (max-width: 512px) {
   .apartado {
     width: 300px;
     justify-content: center;
@@ -551,7 +546,3 @@ input#criptomoneda {
     text-align: center;
   }
 }
-
-
-
-

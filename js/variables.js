@@ -1,4 +1,4 @@
-// ARRAY DE OBJETOS //
+//ARRAY DE OBJETOS
 const criptomonedas = [{nombre: "BITCOIN", creacion: "2008", abreviatura: "BTC", circulacion: "19,363,168 BTC"},
                        {nombre: "ETHEREUM", creacion: "2015", abreviatura: "ETH", circulacion: "120,381,822 ETH"},
                        {nombre: "BNB", creacion: "2017", abreviatura: "BNB", circulacion: "155,862,165 BNB"},

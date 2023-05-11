@@ -15,25 +15,25 @@ const FECHA_HOY = DateTime.toLocaleString(DateTime.DATE_SHORT);
 //FUNCIÓN QUE SIMULA EL PLAZO FIJO
 function simulador() {
     if ((inputCapital.value >= 1000) && (inputMeses.value >= 1 && inputMeses.value <= 60)) {
-    if (selectTipoPlazoFijo.value === "Interes simple") {
-        const simulacionSimple = new Simulador(selectTipoPlazoFijo.value, inputCapital.value, inputMeses.value);
-        resultadoSimulador.textContent = simulacionSimple.simularSimple();
-        montoInicial.textContent = inputCapital.value;
-        intereses.textContent = interes;
-        plazo.textContent = inputMeses.value;
-        } else{
-            const simulacionCompuesto = new Simulador(selectTipoPlazoFijo.value, inputCapital.value, inputMeses.value);
-            resultadoSimulador.textContent = simulacionCompuesto.simularCompuesto();
+        if (selectTipoPlazoFijo.value === "Interes simple") {
+            const simulacionSimple = new Simulador(selectTipoPlazoFijo.value, inputCapital.value, inputMeses.value);
+            resultadoSimulador.textContent = simulacionSimple.simularSimple();
             montoInicial.textContent = inputCapital.value;
-            intereses.textContent = parseInt(interes);
+            intereses.textContent = interes;
             plazo.textContent = inputMeses.value;
-        }
-    } else{
-            Swal.fire({
-                icon: 'error',
-                title: 'Datos incorrectos',
-                text: 'Por favor, ingrese los datos correctamente!',
-            });
+            } else {
+                const simulacionCompuesto = new Simulador(selectTipoPlazoFijo.value, inputCapital.value, inputMeses.value);
+                resultadoSimulador.textContent = simulacionCompuesto.simularCompuesto();
+                montoInicial.textContent = inputCapital.value;
+                intereses.textContent = parseInt(interes);
+                plazo.textContent = inputMeses.value;
+            }
+    } else {
+        Swal.fire({
+            icon: 'error',
+            title: 'Datos incorrectos',
+            text: 'Por favor, ingrese los datos correctamente!',
+        });
     }
 }
 
@@ -67,7 +67,7 @@ function cargarSimulacion() {
     let contenidoTablaHistorial = "";
     tabla_historial.innerHTML = "";
     for (const detalle of obtenerHistorialJSON) {  
-      contenidoTablaHistorial +=    `<tr>
+        contenidoTablaHistorial +=  `<tr>
                                         <td>$${detalle.Capital}</td>
                                         <td>${detalle.Tipo}</td>
                                         <td>$${detalle.Intereses}</td>
@@ -89,34 +89,34 @@ function cargarSimulacionResponsive() {
     }));
     let contenidoTablaHistorial = "";
     tabla_responsive.innerHTML = "";
-        for (const detalle of obtenerHistorialJSON) {  
+    for (const detalle of obtenerHistorialJSON) {  
         contenidoTablaHistorial +=  
-        `<table class="table table-hover tabla_responsive">
-            <tbody id="tbody_responsive">
-                <tr>
+            `<table class="table table-hover tabla_responsive">
+                <tbody id="tbody_responsive">
                     <tr>
-                        <th>Monto</th>
-                        <td>$${detalle.Capital}</td>
+                        <tr>
+                            <th>Monto</th>
+                            <td>$${detalle.Capital}</td>
+                        </tr>
+                        <tr>
+                            <th>Tipo de interes</th>
+                            <td>${detalle.Tipo}</td>
+                        </tr>
+                        <tr>
+                            <th>Intereses</th>
+                            <td>$${detalle.Intereses}</td>
+                        </tr>
+                        <tr>
+                            <th>Meses</th>
+                            <td>${detalle.Plazo}</td>
+                        </tr>
+                        <tr>
+                            <th>Fecha</th>
+                            <td>${detalle.Fecha}</td>
+                        </tr>
                     </tr>
-                    <tr>
-                        <th>Tipo de interes</th>
-                        <td>${detalle.Tipo}</td>
-                    </tr>
-                    <tr>
-                        <th>Intereses</th>
-                        <td>$${detalle.Intereses}</td>
-                    </tr>
-                    <tr>
-                        <th>Meses</th>
-                        <td>${detalle.Plazo}</td>
-                    </tr>
-                    <tr>
-                        <th>Fecha</th>
-                        <td>${detalle.Fecha}</td>
-                    </tr>
-                </tr>
-            </tbody>
-        </table>`;         
+                </tbody>
+            </table>`;         
     }
     tabla_responsive.innerHTML = contenidoTablaHistorial || "";
 }
@@ -142,8 +142,7 @@ btnSimular.addEventListener("click", () => {
             title: "Datos incorrectos",
             text: "Por favor, complete todos los campos correctamente",
         });
-    }
-    else {
+    } else {
         simularYGuardar();
     }
 });
@@ -162,8 +161,7 @@ btnHistorial.addEventListener("click", () => {
             title: "Datos incorrectos",
             text: "Por favor, complete todos los campos correctamente",
         });
-    }
-    else {
+    } else {
         cargarSimulacion(), cargarSimulacionResponsive();
     }
 });
@@ -187,8 +185,7 @@ tablaCriptomonedasHTML(criptomonedas);
 //METODOS DE TRANSFORMACIÓN
 function filtrarCriptomoneda(valor) {
     let resultado = criptomonedas.filter((criptomoneda) => 
-        criptomoneda.nombre.toUpperCase().includes(valor.toUpperCase())
-    );
+        criptomoneda.nombre.toUpperCase().includes(valor.toUpperCase()));
     if (resultado.length > 0) {
         tablaCriptomonedasHTML(resultado);
     } else{
@@ -209,5 +206,5 @@ inputCriptomoneda.addEventListener("search", (e)=> {
 function filtro() {
 var tecla = event.key;
 if (['.',',','e'].includes(tecla))
-   event.preventDefault()
+    event.preventDefault()
 }

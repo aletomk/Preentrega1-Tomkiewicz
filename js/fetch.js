@@ -33,7 +33,6 @@ async function cotizacionDivisas() {
         } else {
             dolarAhorroLI.innerHTML = `<img src="images/baja.png" alt="flecha roja"> <b>Dólar Ahorro:</b> <span class="down">$${precioDolar[3].venta}</span>`;
         }
-        
     } catch(error) {
         console.error('Error al cargar la API DOLAR:', error);
     };
