@@ -17,13 +17,13 @@ function simulador() {
     if ((inputCapital.value >= 1000) && (inputMeses.value >= 1 && inputMeses.value <= 60)) {
         if (selectTipoPlazoFijo.value === "Interes simple") {
             const simulacionSimple = new Simulador(selectTipoPlazoFijo.value, inputCapital.value, inputMeses.value);
-            resultadoSimulador.textContent = simulacionSimple.simularSimple();
+            resultadoSimulador.textContent = "$" + simulacionSimple.simularSimple();
             montoInicial.textContent = inputCapital.value;
             intereses.textContent = interes;
             plazo.textContent = inputMeses.value;
             } else {
                 const simulacionCompuesto = new Simulador(selectTipoPlazoFijo.value, inputCapital.value, inputMeses.value);
-                resultadoSimulador.textContent = simulacionCompuesto.simularCompuesto();
+                resultadoSimulador.textContent = "$" + simulacionCompuesto.simularCompuesto();
                 montoInicial.textContent = inputCapital.value;
                 intereses.textContent = parseInt(interes);
                 plazo.textContent = inputMeses.value;
