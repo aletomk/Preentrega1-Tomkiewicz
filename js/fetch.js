@@ -1,4 +1,4 @@
-const URL_DOLAR = "https://mercados.ambito.com/home/general";
+const URL_DOLAR = "https://www.ambito.com/contenidos/dolar.html";
 const dolarLI = document.querySelector("li#dolar");
 const dolarBlueLI = document.querySelector("li#dolarBlue");
 const dolarAhorroLI = document.querySelector("li#dolarAhorro");
@@ -34,7 +34,7 @@ async function cotizacionDivisas() {
             dolarAhorroLI.innerHTML = `<img src="images/baja.png" alt="flecha roja"> <b>Dólar Ahorro:</b> <span class="down">$${precioDolar[3].venta}</span>`;
         }
     } catch(error) {
-        console.error('Error al cargar la API DOLAR:', error);
+        alert('Error al cargar la API DOLAR:', error);
     };
 }
 cotizacionDivisas();

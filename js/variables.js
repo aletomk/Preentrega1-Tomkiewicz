@@ -21,5 +21,5 @@ const criptomonedas = [{nombre: "BITCOIN", creacion: "2008", abreviatura: "BTC",
                        {nombre: "TONCOIN", creacion: "2016", abreviatura: "TON", circulacion: "1,221,401,181 TON"}];
 
 //VARIABLES Y CONSTANTES DEL SIMULADOR
-const TASA_MENSUAL = 7.5;
+const TASA_MENSUAL = 9.8;
 let interes = 0;
